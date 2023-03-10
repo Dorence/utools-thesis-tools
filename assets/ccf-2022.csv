@@ -1,0 +1,646 @@
+no,a,name,pub,url,tier,type,tp
+1,TOCS,ACM Transactions on Computer Systems,ACM,$dblp/journals/tocs,A,Jrn,CA
+2,TOS,ACM Transactions on Storage,ACM,$dblp/journals/tos,A,Jrn,CA
+3,TCAD,IEEE Transactions On Computer-Aided Design of Integrated Circuits and Systems,IEEE,$dblp/journals/tcad,A,Jrn,CA
+4,TC,IEEE Transactions on Computers,IEEE,$dblp/journals/tc,A,Jrn,CA
+5,TPDS,IEEE Transactions on Parallel and Distributed Systems,IEEE,$dblp/journals/tpds,A,Jrn,CA
+6,TACO,ACM Transactions on Architecture and Code Optimization,ACM,$dblp/journals/taco,A,Jrn,CA
+7,TAAS,ACM Transactions on Autonomous and Adaptive Systems,ACM,$dblp/journals/taas,B,Jrn,CA
+8,TODAES,ACM Transactions on Design Automation of Electronic Systems,ACM,$dblp/journals/todaes,B,Jrn,CA
+9,TECS,ACM Transactions on Embedded Computing Systems,ACM,$dblp/journals/tecs,B,Jrn,CA
+10,TRETS,ACM Transactions on Reconfigurable Technology and Systems,ACM,$dblp/journals/trets,B,Jrn,CA
+11,TVLSI,IEEE Transactions on Very Large Scale Integration (VLSI) Systems,IEEE,$dblp/journals/tvlsi,B,Jrn,CA
+12,JPDC,Journal of Parallel and Distributed Computing,Elsevier,$dblp/journals/jpdc,B,Jrn,CA
+13,JSA,Journal of Systems Architecture: Embedded Software Design,Elsevier,$dblp/journals/jsa,B,Jrn,CA
+14,PARCO,Parallel Computing,Elsevier,$dblp/journals/pc,B,Jrn,CA
+15,PEVA,Performance Evaluation: An International Journal,Elsevier,$dblp/journals/pe,B,Jrn,CA
+16,JETC,ACM Journal on Emerging Technologies in Computing Systems,ACM,$dblp/journals/jetc,C,Jrn,CA
+17,CPE,Concurrency and Computation: Practice and Experience,Wiley,$dblp/journals/concurrency,C,Jrn,CA
+18,DC,Distributed Computing,Springer,$dblp/journals/dc,C,Jrn,CA
+19,FGCS,Future Generation Computer Systems,Elsevier,$dblp/journals/fgcs,C,Jrn,CA
+20,TCC,IEEE Transactions on Cloud Computing,IEEE,$dblp/journals/tcc,C,Jrn,CA
+21,Integration,"Integration, the VLSI Journal",Elsevier,$dblp/journals/integration,C,Jrn,CA
+22,JETTA,Journal of Electronic Testing-Theory and Applications,Springer,$dblp/journals/et,C,Jrn,CA
+23,JGC,The Journal of Grid Computing,Springer,$dblp/journals/grid,C,Jrn,CA
+24,RTS,Real-Time Systems,Springer,$dblp/journals/rts,C,Jrn,CA
+25,TJSC,The Journal of Supercomputing,Springer,$dblp/journals/tjs,C,Jrn,CA
+26,TCASI,IEEE Transactions on Circuits and Systems I: Regular Papers,IEEE,$dblp/journals/tcasI,C,Jrn,CA
+27,CCF-THPC,CCF Transactions on High Performance Computing,CCF,$dblp/journals/ccfthpc,C,Jrn,CA
+28,TSUSC,IEEE Transactions on Sustainable Computing,IEEE,$dblp/journals/tsusc,C,Jrn,CA
+29,PPoPP,ACM SIGPLAN Symposium on Principles & Practice of Parallel Programming,ACM,$dblp/conf/ppopp,A,Conf,CA
+30,FAST,USENIX Conference on File and Storage Technologies,USENIX,$dblp/conf/fast,A,Conf,CA
+31,DAC,Design Automation Conference,ACM,$dblp/conf/dac,A,Conf,CA
+32,HPCA,IEEE International Symposium on High Performance Computer Architecture,IEEE,$dblp/conf/hpca,A,Conf,CA
+33,MICRO,IEEE/ACM International Symposium on Microarchitecture,IEEE/ACM,$dblp/conf/micro,A,Conf,CA
+34,SC,"International Conference for High Performance Computing, Networking, Storage, and Analysis",IEEE,$dblp/conf/sc,A,Conf,CA
+35,ASPLOS,International Conference on Architectural Support for Programming Languages and Operating Systems,ACM,$dblp/conf/asplos,A,Conf,CA
+36,ISCA,International Symposium on Computer Architecture,ACM/IEEE,$dblp/conf/isca,A,Conf,CA
+37,USENIX ATC,USENIX Annual Technical Conference,USENIX,$dblp/conf/usenix,A,Conf,CA
+38,EuroSys,European Conference on Computer Systems,ACM,$dblp/conf/eurosys,A,Conf,CA
+39,SoCC,ACM Symposium on Cloud Computing,ACM,$dblp/conf/cloud,B,Conf,CA
+40,SPAA,ACM Symposium on Parallelism in Algorithms and Architectures,ACM,$dblp/conf/spaa,B,Conf,CA
+41,PODC,ACM Symposium on Principles of Distributed Computing,ACM,$dblp/conf/podc,B,Conf,CA
+42,FPGA,ACM/SIGDA International Symposium on Field-Programmable Gate Arrays,ACM,$dblp/conf/fpga,B,Conf,CA
+43,CGO,The International Symposium on Code Generation and Optimization,IEEE/ACM,$dblp/conf/cgo,B,Conf,CA
+44,DATE,"Design, Automation & Test in Europe",IEEE/ACM,$dblp/conf/date,B,Conf,CA
+45,HOT CHIPS,Hot Chips: A Symposium on High Performance Chips,IEEE,$dblp/conf/hotchips,B,Conf,CA
+46,CLUSTER,IEEE International Conference on Cluster Computing,IEEE,$dblp/conf/cluster,B,Conf,CA
+47,ICCD,International Conference on Computer Design,IEEE,$dblp/conf/iccd,B,Conf,CA
+48,ICCAD,International Conference on Computer-Aided Design,IEEE/ACM,$dblp/conf/iccad,B,Conf,CA
+49,ICDCS,IEEE International Conference on Distributed Computing Systems,IEEE,$dblp/conf/icdcs,B,Conf,CA
+50,CODES+ISSS,International Conference on Hardware/Software Co-design and System Synthesis,ACM/IEEE,$dblp/conf/codesisss,B,Conf,CA
+51,HiPEAC,International Conference on High Performance and Embedded Architectures and Compilers,ACM,$dblp/conf/hipeac,B,Conf,CA
+52,SIGMETRICS,International Conference on Measurement and Modeling of Computer Systems,ACM,$dblp/conf/sigmetrics,B,Conf,CA
+53,PACT,International Conference on Parallel Architectures and Compilation Techniques,IEEE/ACM,$dblp/conf/IEEEpact,B,Conf,CA
+54,ICPP,International Conference on Parallel Processing,,$dblp/conf/icpp,B,Conf,CA
+55,ICS,International Conference on Supercomputing,ACM,$dblp/conf/ics,B,Conf,CA
+56,VEE,International Conference on Virtual Execution Environments,ACM,$dblp/conf/vee,B,Conf,CA
+57,IPDPS,IEEE International Parallel & Distributed Processing Symposium,IEEE,$dblp/conf/ipps,B,Conf,CA
+58,Performance,"International Symposium on Computer Performance, Modeling, Measurements and Evaluation",ACM,$dblp/conf/performance,B,Conf,CA
+59,HPDC,The International ACM Symposium on High-Performance Parallel and Distributed Computing,IEEE,$dblp/conf/hpdc,B,Conf,CA
+60,ITC,International Test Conference,IEEE,$dblp/conf/itc,B,Conf,CA
+61,LISA,Large Installation System Administration Conference,USENIX,$dblp/conf/lisa,B,Conf,CA
+62,MSST,Mass Storage Systems and Technologies,IEEE,$dblp/conf/mss,B,Conf,CA
+63,RTAS,IEEE Real-Time and Embedded Technology and Applications Symposium,IEEE,$dblp/conf/rtas,B,Conf,CA
+64,Euro-Par,European Conference on Parallel and Distributed Computing,Springer,$dblp/conf/europar,B,Conf,CA
+65,CF,ACM International Conference on Computing Frontiers,ACM,$dblp/conf/cf,C,Conf,CA
+66,SYSTOR,ACM International Systems and Storage Conference,ACM,$dblp/conf/systor,C,Conf,CA
+67,NOCS,ACM/IEEE International Symposium on Networks-on-Chip,ACM/IEEE,$dblp/conf/nocs,C,Conf,CA
+68,ASAP,"IEEE International Conference on Application-Specific Systems, Architectures, and Processors",IEEE,$dblp/conf/asap,C,Conf,CA
+69,ASP-DAC,Asia and South Pacific Design Automation Conference,ACM/IEEE,$dblp/conf/aspdac,C,Conf,CA
+70,ETS,IEEE European Test Symposium,IEEE,$dblp/conf/ets,C,Conf,CA
+71,FPL,International Conference on Field-Programmable Logic and Applications,IEEE,$dblp/conf/fpl,C,Conf,CA
+72,FCCM,IEEE Symposium on Field-Programmable Custom Computing Machines,IEEE,$dblp/conf/fccm,C,Conf,CA
+73,GLSVLSI,Great Lakes Symposium on VLSI,ACM/IEEE,$dblp/conf/glvlsi,C,Conf,CA
+74,ATS,IEEE Asian Test Symposium,IEEE,$dblp/conf/ats,C,Conf,CA
+75,HPCC,IEEE International Conference on High Performance Computing and Communications,IEEE,$dblp/conf/hpcc,C,Conf,CA
+76,HiPC,"IEEE International Conference on High Performance Computing, Data and Analytics",IEEE/ACM,$dblp/conf/hipc,C,Conf,CA
+77,MASCOTS,"International Symposium on Modeling, Analysis, and Simulation of Computer and Telecommunication Systems",IEEE,$dblp/conf/mascots,C,Conf,CA
+78,ISPA,IEEE International Symposium on Parallel and Distributed Processing with Applications,IEEE,$dblp/conf/ispa,C,Conf,CA
+79,CCGRID,"IEEE/ACM International Symposium on Cluster, Cloud and Grid Computing",ACM/IEEE,$dblp/conf/ccgrid,C,Conf,CA
+80,NPC,IFIP International Conference on Network and Parallel Computing,Springer,$dblp/conf/npc,C,Conf,CA
+81,ICA3PP,International Conference on Algorithms and Architectures for Parallel Processing,IEEE,$dblp/conf/ica3pp,C,Conf,CA
+82,CASES,"International Conference on Compilers, Architectures, and Synthesis for Embedded Systems",ACM,$dblp/conf/cases,C,Conf,CA
+83,FPT,International Conference on Field-Programmable Technology,IEEE,$dblp/conf/fpt,C,Conf,CA
+84,ICPADS,International Conference on Parallel and Distributed Systems,IEEE,$dblp/conf/icpads,C,Conf,CA
+85,ISCAS,International Symposium on Circuits and Systems,IEEE,$dblp/conf/iscas,C,Conf,CA
+86,ISLPED,International Symposium on Low Power Electronics and Design,ACM/IEEE,$dblp/conf/islped,C,Conf,CA
+87,ISPD,International Symposium on Physical Design,ACM,$dblp/conf/ispd,C,Conf,CA
+88,HOTI,IEEE Symposium on High-Performance Interconnects,IEEE,$dblp/conf/hoti,C,Conf,CA
+89,VTS,IEEE VLSI Test Symposium,IEEE,$dblp/conf/vts,C,Conf,CA
+90,ITC-Asia,International Test Conference in Asia,IEEE,$dblp/conf/itc-asia,C,Conf,CA
+91,JSAC,IEEE Journal on Selected Areas in Communications,IEEE,$dblp/journals/jsac,A,Jrn,CN
+92,TMC,IEEE Transactions on Mobile Computing,IEEE,$dblp/journals/tmc,A,Jrn,CN
+93,TON,IEEE/ACM Transactions on Networking,IEEE/ACM,$dblp/journals/ton,A,Jrn,CN
+94,TOIT,ACM Transactions on Internet Technology,ACM,$dblp/journals/toit,B,Jrn,CN
+95,TOMM,"ACM Transactions on Multimedia Computing, Communications and Applications",ACM,$dblp/journals/tomccap,B,Jrn,CN
+96,TOSN,ACM Transactions on Sensor Networks,ACM,$dblp/journals/tosn,B,Jrn,CN
+97,CN,Computer Networks,Elsevier,$dblp/journals/cn,B,Jrn,CN
+98,TCOM,IEEE Transactions on Communications,IEEE,$dblp/journals/tcom,B,Jrn,CN
+99,TWC,IEEE Transactions on Wireless Communications,IEEE,$dblp/journals/twc,B,Jrn,CN
+100,AdHoc,Ad Hoc Networks,Elsevier,$dblp/journals/adhoc,C,Jrn,CN
+101,CC,Computer Communications,Elsevier,$dblp/journals/comcom,C,Jrn,CN
+102,TNSM,IEEE Transactions on Network and Service Management,IEEE,$dblp/journals/tnsm,C,Jrn,CN
+103,,IET Communications,IET,$dblp/journals/iet-com,C,Jrn,CN
+104,JNCA,Journal of Network and Computer Applications,Elsevier,$dblp/journals/jnca,C,Jrn,CN
+105,MONET,Mobile Networks and Applications,Springer,$dblp/journals/monet,C,Jrn,CN
+106,,Networks,Wiley,$dblp/journals/networks,C,Jrn,CN
+107,PPNA,Peer-to-Peer Networking and Applications,Springer,$dblp/journals/ppna,C,Jrn,CN
+108,WCMC,Wireless Communications and Mobile Computing,Wiley.,$dblp/journals/wicomm,C,Jrn,CN
+109,,Wireless Networks,Springer,$dblp/journals/winet,C,Jrn,CN
+110,IOT,IEEE Internet of Things Journal,IEEE,$dblp/journals/iot,C,Jrn,CN
+111,SIGCOMM,"ACM International Conference on Applications, Technologies, Architectures, and Protocols for Computer Communication",ACM,$dblp/conf/sigcomm,A,Conf,CN
+112,MobiCom,ACM International Conference on Mobile Computing and Networking,ACM,$dblp/conf/mobicom,A,Conf,CN
+113,INFOCOM,IEEE International Conference on Computer Communications,IEEE,$dblp/conf/infocom,A,Conf,CN
+114,NSDI,Symposium on Network System Design and Implementation,USENIX,$dblp/conf/nsdi,A,Conf,CN
+115,SenSys,ACM Conference on Embedded Networked Sensor Systems,ACM,$dblp/conf/sensys,B,Conf,CN
+116,CoNEXT,ACM International Conference on Emerging Networking Experiments and Technologies,ACM,$dblp/conf/conext,B,Conf,CN
+117,SECON,"IEEE International Conference on Sensing, Communication, and Networking",IEEE,$dblp/conf/secon,B,Conf,CN
+118,IPSN,International Conference on Information Processing in Sensor Networks,IEEE/ACM,$dblp/conf/ipsn,B,Conf,CN
+119,MobiSys,"International Conference on Mobile Systems, Applications, and Services",ACM,$dblp/conf/mobisys,B,Conf,CN
+120,ICNP,IEEE International Conference on Network Protocols,IEEE,$dblp/conf/icnp,B,Conf,CN
+121,MobiHoc,"International Symposium on Theory, Algorithmic Foundations, and Protocol Design for Mobile Networks and Mobile Computing",ACM/IEEE,$dblp/conf/mobihoc,B,Conf,CN
+122,NOSSDAV,International Workshop on Network and Operating System Support for Digital Audio and Video,ACM,$dblp/conf/nossdav,B,Conf,CN
+123,IWQoS,IEEE/ACM International Workshop on Quality of Service,IEEE,$dblp/conf/iwqos,B,Conf,CN
+124,IMC,ACM Internet Measurement Conference,ACM/USENIX,$dblp/conf/imc,B,Conf,CN
+125,ANCS,ACM/IEEE Symposium on Architectures for Networking and Communication Systems,ACM/IEEE,$dblp/conf/ancs,C,Conf,CN
+126,APNOMS,Asia-Pacific Network Operations and Management Symposium,IFIP/IEEE,$dblp/conf/apnoms,C,Conf,CN
+127,FORTE,"International Conference on Formal Techniques for Distributed Objects, Components, and Systems",Springer,$dblp/conf/forte,C,Conf,CN
+128,LCN,IEEE Conference on Local Computer Networks,IEEE,$dblp/conf/lcn,C,Conf,CN
+129,GLOBECOM,IEEE Global Communications Conference,IEEE,$dblp/conf/globecom,C,Conf,CN
+130,ICC,IEEE International Conference on Communications,IEEE,$dblp/conf/icc,C,Conf,CN
+131,ICCCN,IEEE International Conference on Computer Communications and Networks,IEEE,$dblp/conf/icccn,C,Conf,CN
+132,MASS,IEEE International Conference on Mobile Adhoc and Sensor Systems,IEEE,$dblp/conf/mass,C,Conf,CN
+133,P2P,IEEE International Conference on Peer-to-Peer Computing,IEEE,$dblp/conf/p2p,C,Conf,CN
+134,IPCCC,IEEE International Performance Computing and Communications Conference,IEEE,$dblp/conf/ipccc,C,Conf,CN
+135,WoWMoM,"IEEE International Symposium on a World of Wireless, Mobile and Multimedia Networks",IEEE,$dblp/conf/wowmom,C,Conf,CN
+136,ISCC,IEEE Symposium on Computers and Communications,IEEE,$dblp/conf/iscc,C,Conf,CN
+137,WCNC,IEEE Wireless Communications and Networking Conference,IEEE,$dblp/conf/wcnc,C,Conf,CN
+138,Networking,IFIP International Conferences on Networking,IFIP,$dblp/conf/networking,C,Conf,CN
+139,IM,IFIP/IEEE International Symposium on Integrated Network Management,IFIP/IEEE,$dblp/conf/im,C,Conf,CN
+140,MSN,"International Conference on Mobility, Sensing and Networking",IEEE,$dblp/conf/msn,C,Conf,CN
+141,MSWiM,"International Conference on Modeling, Analysis and Simulation of Wireless and Mobile Systems",ACM,$dblp/conf/mswim,C,Conf,CN
+142,WASA,"International Conference on Wireless Algorithms, Systems, and Applications",Springer,$dblp/conf/wasa,C,Conf,CN
+143,HotNets,ACM The Workshop on Hot Topics in Networks,ACM,$dblp/conf/hotnets,C,Conf,CN
+144,APNet,Asia-Pacific Workshop on Networking,ACM,$dblp/conf/apnet,C,Conf,CN
+145,TDSC,IEEE Transactions on Dependable and Secure Computing,IEEE,$dblp/journals/tdsc,A,Jrn,IS
+146,TIFS,IEEE Transactions on Information Forensics and Security,IEEE,$dblp/journals/tifs,A,Jrn,IS
+147,JOC,Journal of Cryptology,Springer,$dblp/journals/joc,A,Jrn,IS
+148,TOPS,ACM Transactions on Privacy and Security,ACM,$dblp/journals/tissec,B,Jrn,IS
+149,CompSec,Computers & Security,Elsevier,$dblp/journals/compsec,B,Jrn,IS
+150,,"Designs, Codes and Cryptography",Springer,$dblp/journals/dcc,B,Jrn,IS
+151,JCS,Journal of Computer Security,IOS Press,$dblp/journals/jcs,B,Jrn,IS
+152,CLSR,Computer Law & Security Review,Elsevier,$dblp/journals/clsr,C,Jrn,IS
+153,,EURASIP Journal on Information Security,Springer,$dblp/journals/ejisec,C,Jrn,IS
+154,,IET Information Security,IET,$dblp/journals/iet-ifs,C,Jrn,IS
+155,IMCS,Information and Computer Security,Emerald,$dblp/journals/imcs,C,Jrn,IS
+156,IJICS,International Journal of Information and Computer Security,Inderscience,$dblp/journals/ijics,C,Jrn,IS
+157,IJISP,International Journal of Information Security and Privacy,Idea Group Inc,$dblp/journals/ijisp,C,Jrn,IS
+158,JISA,Journal of Information Security and Applications,Elsevier,$dblp/journals/istr,C,Jrn,IS
+159,SCN,Security and Communication Networks,Wiley,$dblp/journals/scn,C,Jrn,IS
+160,,Cybersecurity,Springer,$dblp/journals/cybersec,C,Jrn,IS
+161,CCS,ACM Conference on Computer and Communications Security,ACM,$dblp/conf/ccs,A,Conf,IS
+162,EUROCRYPT,International Conference on the Theory and Applications of Cryptographic Techniques,Springer,$dblp/conf/eurocrypt,A,Conf,IS
+163,S&P,IEEE Symposium on Security and Privacy,IEEE,$dblp/conf/sp,A,Conf,IS
+164,CRYPTO,International Cryptology Conference,Springer,$dblp/conf/crypto,A,Conf,IS
+165,USENIX Security,Usenix Security Symposium,USENIX Association,$dblp/conf/uss,A,Conf,IS
+166,NDSS,Network and Distributed System Security Symposium,ISOC,$dblp/conf/ndss,A,Conf,IS
+167,ACSAC,Annual Computer Security Applications Conference,IEEE,$dblp/conf/acsac,B,Conf,IS
+168,ASIACRYPT,Annual International Conference on the Theory and Application of Cryptology and Information Security,Springer,$dblp/conf/asiacrypt,B,Conf,IS
+169,ESORICS,European Symposium on Research in Computer Security,Springer,$dblp/conf/esorics,B,Conf,IS
+170,FSE,Fast Software Encryption,Springer,$dblp/conf/fse,B,Conf,IS
+171,CSFW,IEEE Computer Security Foundations Workshop,IEEE,$dblp/conf/csfw,B,Conf,IS
+172,SRDS,IEEE International Symposium on Reliable Distributed Systems,IEEE,$dblp/conf/srds,B,Conf,IS
+173,CHES,International Conference on Cryptographic Hardware and Embedded Systems,Springer,$dblp/conf/ches,B,Conf,IS
+174,DSN,International Conference on Dependable Systems and Networks,IEEE/IFIP,$dblp/conf/dsn,B,Conf,IS
+175,RAID,International Symposium on Recent Advances in Intrusion Detection,Springer,$dblp/conf/raid,B,Conf,IS
+176,PKC,International Workshop on Practice and Theory in Public Key Cryptography,Springer,$dblp/conf/pkc,B,Conf,IS
+177,TCC,Theory of Cryptography Conference,Springer,$dblp/conf/tcc,B,Conf,IS
+178,WiSec,ACM Conference on Security and Privacy in Wireless and Mobile Networks,ACM,$dblp/conf/wisec,C,Conf,IS
+179,SACMAT,ACM Symposium on Access Control Models and Technologies,ACM,$dblp/conf/sacmat,C,Conf,IS
+180,DRM,ACM Workshop on Digital Rights Management,ACM,$dblp/conf/drm,C,Conf,IS
+181,IH&MMSec,ACM Workshop on Information Hiding and Multimedia Security,ACM,$dblp/conf/ih,C,Conf,IS
+182,ACNS,International Conference on Applied Cryptography and Network Security,Springer,$dblp/conf/acns,C,Conf,IS
+183,AsiaCCS,ACM Asia Conference on Computer and Communications Security,ACM,$dblp/conf/ccs,C,Conf,IS
+184,ACISP,Australasia Conference on Information Security and Privacy,Springer,$dblp/conf/acisp,C,Conf,IS
+185,CT-RSA,The Cryptographer's Track at RSA Conference,Springer,$dblp/conf/ctrsa,C,Conf,IS
+186,DIMVA,Conference on Detection of Intrusions and Malware & Vulnerability Assessment,,$dblp/conf/dimva,C,Conf,IS
+187,DFRWS,Digital Forensic Research Workshop,Elsevier,$dblp/conf/dfrws,C,Conf,IS
+188,FC,Financial Cryptography and Data Security,Springer,$dblp/conf/fc,C,Conf,IS
+189,TrustCom,"IEEE International Conference on Trust, Security and Privacy in Computing and Communications",IEEE,$dblp/conf/trustcom,C,Conf,IS
+190,SEC,IFIP International Information Security Conference,Springer,$dblp/conf/sec,C,Conf,IS
+191,IFIP WG 11.9,IFIP Working Group 11.9 International Conference on Digital Forensics,Springer,$dblp/conf/ifip11-9,C,Conf,IS
+192,ISC,Information Security Conference,Springer,$dblp/conf/isw,C,Conf,IS
+193,ICDF2C,International Conference on Digital Forensics & Cyber Crime,Springer,$dblp/conf/icdf2c,C,Conf,IS
+194,ICICS,International Conference on Information and Communications Security,Springer,$dblp/conf/icics,C,Conf,IS
+195,SecureComm,International Conference on Security and Privacy in Communication Networks,ACM,$dblp/conf/securecomm,C,Conf,IS
+196,NSPW,New Security Paradigms Workshop,ACM,$dblp/conf/nspw,C,Conf,IS
+197,PAM,Passive and Active Measurement Conference,Springer,$dblp/conf/pam,C,Conf,IS
+198,PETS,Privacy Enhancing Technologies Symposium,Springer,$dblp/conf/pet,C,Conf,IS
+199,SAC,Selected Areas in Cryptography,Springer,$dblp/conf/sacrypt,C,Conf,IS
+200,SOUPS,Symposium On Usable Privacy and Security,ACM,$dblp/conf/soups,C,Conf,IS
+201,HotSec,USENIX Workshop on Hot Topics in Security,USENIX,$dblp/conf/uss,C,Conf,IS
+202,EuroS&P,IEEE European Symposium on Security and Privacy,IEEE,$dblp/conf/eurosp,C,Conf,IS
+203,Inscrypt,International Conference on Information Security and Cryptology,Springer,$dblp/conf/cisc,C,Conf,IS
+204,TOPLAS,ACM Transactions on Programming Languages and Systems,ACM,$dblp/journals/toplas,A,Jrn,SE
+205,TOSEM,ACM Transactions on Software Engineering and Methodology,ACM,$dblp/journals/tosem,A,Jrn,SE
+206,TSE,IEEE Transactions on Software Engineering,IEEE,$dblp/journals/tse,A,Jrn,SE
+207,TSC,IEEE Transactions on Service Computing,IEEE,$dblp/journals/tsc,A,Jrn,SE
+208,ASE,Automated Software Engineering,Springer,$dblp/journals/ase,B,Jrn,SE
+209,ESE,Empirical Software Engineering,Springer,$dblp/journals/ese,B,Jrn,SE
+210,IETS,IET Software,IET,$dblp/journals/iee-sen,B,Jrn,SE
+211,IST,Information and Software Technology,Elsevier,$dblp/journals/infsof,B,Jrn,SE
+212,JFP,Journal of Functional Programming,Cambridge University Press,$dblp/journals/jfp,B,Jrn,SE
+213,,Journal of Software: Evolution and Process,Wiley,$dblp/journals/smr,B,Jrn,SE
+214,JSS,Journal of Systems and Software,Elsevier,$dblp/journals/jss,B,Jrn,SE
+215,RE,Requirements Engineering,Springer,$dblp/journals/re,B,Jrn,SE
+216,SCP,Science of Computer Programming,Elsevier,$dblp/journals/scp,B,Jrn,SE
+217,SoSyM,Software and Systems Modeling,Springer,$dblp/journals/sosym,B,Jrn,SE
+218,STVR,"Software Testing, Verification and Reliability",Wiley,$dblp/journals/stvr,B,Jrn,SE
+219,SPE,Software: Practice and Experience,Wiley,$dblp/journals/spe,B,Jrn,SE
+220,CL,"Computer Languages, Systems and Structures",Elsevier,$dblp/journals/cl,C,Jrn,SE
+221,IJSEKE,International Journal on Software Engineering and Knowledge Engineering,World Scientific,$dblp/journals/ijseke,C,Jrn,SE
+222,STTT,International Journal on Software Tools for Technology Transfer,Springer,$dblp/journals/sttt,C,Jrn,SE
+223,JLAP,Journal of Logical and Algebraic Methods in Programming,Elsevier,$dblp/journals/jlap,C,Jrn,SE
+224,JWE,Journal of Web Engineering,Rinton Press,$dblp/journals/jwe,C,Jrn,SE
+225,SOCA,Service Oriented Computing and Applications,Springer,$dblp/journals/soca,C,Jrn,SE
+226,SQJ,Software Quality Journal,Springer,$dblp/journals/sqj,C,Jrn,SE
+227,TPLP,Theory and Practice of Logic Programming,Cambridge University Press,$dblp/journals/tplp,C,Jrn,SE
+228,PACM PL,Proceedings of the ACM on Programming Languages,ACM,$dblp/journals/pacmpl,C,Jrn,SE
+229,PLDI,ACM SIGPLAN Conference on Programming Language Design and Implementation,ACM,$dblp/conf/pldi,A,Conf,SE
+230,POPL,ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages,ACM,$dblp/conf/popl,A,Conf,SE
+231,FSE/ESEC,ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering,ACM,$dblp/conf/sigsoft,A,Conf,SE
+232,SOSP,ACM Symposium on Operating Systems Principles,ACM,$dblp/conf/sosp,A,Conf,SE
+233,OOPSLA,"Conference on Object-Oriented Programming Systems, Languages, and Applications",ACM,$dblp/conf/oopsla,A,Conf,SE
+234,ASE,International Conference on Automated Software Engineering,IEEE/ACM,$dblp/conf/kbse,A,Conf,SE
+235,ICSE,International Conference on Software Engineering,ACM/IEEE,$dblp/conf/icse,A,Conf,SE
+236,ISSTA,International Symposium on Software Testing and Analysis,ACM,$dblp/conf/issta,A,Conf,SE
+237,OSDI,USENIX Symposium on Operating Systems Design and Implementation,USENIX,$dblp/conf/osdi,A,Conf,SE
+238,FM,International Symposium on Formal Methods,FME,$dblp/conf/fm,A,Conf,SE
+239,ECOOP,European Conference on Object-Oriented Programming,AITO,$dblp/conf/ecoop,B,Conf,SE
+240,ETAPS,European Joint Conferences on Theory and Practice of Software,Springer,$dblp/conf/etaps,B,Conf,SE
+241,ICPC,IEEE International Conference on Program Comprehension,IEEE,$dblp/conf/iwpc,B,Conf,SE
+242,RE,IEEE International Requirements Engineering Conference,IEEE,$dblp/conf/re,B,Conf,SE
+243,CAiSE,International Conference on Advanced Information Systems Engineering,Springer,$dblp/conf/caise,B,Conf,SE
+244,ICFP,ACM SIGPLAN International Conference on Function Programming,ACM,$dblp/conf/icfp,B,Conf,SE
+245,LCTES,"ACM SIGPLAN/SIGBED International Conference on Languages, Compilers and Tools for Embedded Systems",ACM,$dblp/conf/lctrts,B,Conf,SE
+246,MoDELS,ACM/IEEE International Conference on Model Driven Engineering Languages and Systems,"ACM, IEEE",$dblp/conf/models,B,Conf,SE
+247,CP,International Conference on Principles and Practice of Constraint Programming,Springer,$dblp/conf/cp,B,Conf,SE
+248,ICSOC,International Conference on Service Oriented Computing,Springer,$dblp/conf/icsoc,B,Conf,SE
+249,SANER,"IEEE International Conference on Software Analysis, Evolution, and Reengineering",IEEE,$dblp/conf/wcre,B,Conf,SE
+250,ICSME,International Conference on Software Maintenance and Evolution,IEEE,$dblp/conf/icsm,B,Conf,SE
+251,VMCAI,"International Conference on Verification, Model Checking, and Abstract Interpretation",Springer,$dblp/conf/vmcai,B,Conf,SE
+252,ICWS,IEEE International Conference on Web Services,IEEE,$dblp/conf/icws,B,Conf,SE
+253,Middleware,International Middleware Conference,ACM/IFIP/USENIX,$dblp/conf/middleware,B,Conf,SE
+254,SAS,International Static Analysis Symposium,Springer,$dblp/conf/sas,B,Conf,SE
+255,ESEM,International Symposium on Empirical Software Engineering and Measurement,ACM/IEEE,$dblp/conf/esem,B,Conf,SE
+256,ISSRE,IEEE International Symposium on Software Reliability Engineering,ACM,$dblp/conf/issre,B,Conf,SE
+257,HotOS,USENIX Workshop on Hot Topics in Operating Systems,USENIX,$dblp/conf/hotos,B,Conf,SE
+258,PEPM,ACM SIGPLAN Workshop on Partial Evaluation and Program Manipulation,ACM,$dblp/conf/pepm,C,Conf,SE
+259,PASTE,ACM SIGPLAN-SIGSOFT Workshop on Program Analysis for Software Tools and Engineering,ACM,$dblp/conf/paste,C,Conf,SE
+260,APLAS,Asian Symposium on Programming Languages and Systems,Springer,$dblp/conf/aplas,C,Conf,SE
+261,APSEC,Asia-Pacific Software Engineering Conference,IEEE,$dblp/conf/apsec,C,Conf,SE
+262,EASE,International Conference on Evaluation and Assessment in Software Engineering,ACM,$dblp/conf/ease,C,Conf,SE
+263,ICECCS,International Conference on Engineering of Complex Computer Systems,IEEE,$dblp/conf/iceccs,C,Conf,SE
+264,ICST,"IEEE International Conference on Software Testing, Verification and Validation",IEEE,$dblp/conf/icst,C,Conf,SE
+265,ISPASS,IEEE International Symposium on Performance Analysis of Systems and Software,IEEE,$dblp/conf/ispass,C,Conf,SE
+266,SCAM,IEEE International Working Conference on Source Code Analysis and Manipulation,IEEE,$dblp/conf/scam,C,Conf,SE
+267,COMPSAC,International Computer Software and Applications Conference,IEEE,$dblp/conf/compsac,C,Conf,SE
+268,ICFEM,International Conference on Formal Engineering Methods,Springer,$dblp/conf/icfem,C,Conf,SE
+269,SCC,IEEE International Conference on Services Computing,IEEE,$dblp/conf/IEEEscc,C,Conf,SE
+270,ICSSP,International Conference on Software and System Process,ACM,$dblp/conf/ispw,C,Conf,SE
+271,SEKE,International Conference on Software Engineering and Knowledge Engineering,KSI,$dblp/conf/seke,C,Conf,SE
+272,QRS,"International Conference on Software Quality, Reliability and Security",IEEE,$dblp/conf/qrs,C,Conf,SE
+273,ICSR,International Conference on Software Reuse,Springer,$dblp/conf/icsr,C,Conf,SE
+274,ICWE,International Conference on Web Engineering,Springer,$dblp/conf/icwe,C,Conf,SE
+275,SPIN,International Symposium on Model Checking of Software,Springer,$dblp/conf/spin,C,Conf,SE
+276,ATVA,International Symposium on Automated Technology for Verification and Analysis,Springer,$dblp/conf/atva,C,Conf,SE
+277,LOPSTR,International Symposium on Logic-based Program Synthesis and Transformation,Springer,$dblp/conf/lopstr,C,Conf,SE
+278,TASE,Theoretical Aspects of Software Engineering Conference,IEEE,$dblp/conf/tase,C,Conf,SE
+279,MSR,Mining Software Repositories,IEEE/ACM,$dblp/conf/msr,C,Conf,SE
+280,REFSQ,Requirements Engineering: Foundation for Software Quality,Springer,$dblp/conf/refsq,C,Conf,SE
+281,WICSA,Working IEEE/IFIP Conference on Software Architecture,IEEE,$dblp/conf/wicsa,C,Conf,SE
+282,Internetware,Asia-Pacific Symposium on Internetware,ACM,$dblp/conf/internetware,C,Conf,SE
+283,RV,International Conference on Runtime Verification,Springer,$dblp/conf/rv,C,Conf,SE
+284,TODS,ACM Transactions on Database Systems,ACM,$dblp/journals/tods,A,Jrn,DB
+285,TOIS,ACM Transactions on Information Systems,ACM,$dblp/journals/tois,A,Jrn,DB
+286,TKDE,IEEE Transactions on Knowledge and Data Engineering,IEEE,$dblp/journals/tkde,A,Jrn,DB
+287,VLDBJ,The VLDB Journal,Springer,$dblp/journals/vldb,A,Jrn,DB
+288,TKDD,ACM Transactions on Knowledge Discovery from Data,ACM,$dblp/journals/tkdd,B,Jrn,DB
+289,TWEB,ACM Transactions on the Web,ACM,$dblp/journals/tweb,B,Jrn,DB
+290,AEI,Advanced Engineering Informatics,Elsevier,$dblp/journals/aei,B,Jrn,DB
+291,DKE,Data & Knowledge Engineering,Elsevier,$dblp/journals/dke,B,Jrn,DB
+292,DMKD,Data Mining and Knowledge Discovery,Springer,$dblp/journals/datamine,B,Jrn,DB
+293,EJIS,European Journal of Information Systems,Springer,$dblp/journals/ejis,B,Jrn,DB
+294,,GeoInformatica,Springer,$dblp/journals/geoinformatica,B,Jrn,DB
+295,IPM,Information Processing and Management,Elsevier,$dblp/journals/ipm,B,Jrn,DB
+296,INS,Information Sciences,Elsevier,$dblp/journals/isci,B,Jrn,DB
+297,IS,Information Systems,Elsevier,$dblp/journals/is,B,Jrn,DB
+298,JASIST,Journal of the Association for Information Science and Technology,Wiley,$dblp/journals/jasis,B,Jrn,DB
+299,JWS,Journal of Web Semantics,Elsevier,$dblp/journals/ws,B,Jrn,DB
+300,KAIS,Knowledge and Information Systems,Springer,$dblp/journals/kais,B,Jrn,DB
+301,DPD,Distributed and Parallel Databases,Springer,$dblp/journals/dpd,C,Jrn,DB
+302,I&M,Information & Management,Elsevier,$dblp/journals/iam,C,Jrn,DB
+303,IPL,Information Processing Letters,Elsevier,$dblp/journals/ipl,C,Jrn,DB
+304,IR,Information Retrieval Journal,Springer,$dblp/journals/ir,C,Jrn,DB
+305,IJCIS,International Journal of Cooperative Information Systems,World Scientific,$dblp/journals/ijcis,C,Jrn,DB
+306,IJGIS,International Journal of Geographical Information Science,Taylor & Francis,$dblp/journals/gis,C,Jrn,DB
+307,IJIS,International Journal of Intelligent Systems,Wiley,$dblp/journals/ijis,C,Jrn,DB
+308,IJKM,International Journal of Knowledge Management,IGI,$dblp/journals/ijkm,C,Jrn,DB
+309,IJSWIS,International Journal on Semantic Web and Information Systems,IGI,$dblp/journals/ijswis,C,Jrn,DB
+310,JCIS,Journal of Computer Information Systems,IACIS,$dblp/journals/jcis,C,Jrn,DB
+311,JDM,Journal of Database Management,IGI-Global,$dblp/journals/jdm,C,Jrn,DB
+312,JGITM,Journal of Global Information Technology Management,Ivy League Publishing,$dblp/journals/jgim,C,Jrn,DB
+313,JIIS,Journal of Intelligent Information Systems,Springer,$dblp/journals/jiis,C,Jrn,DB
+314,JSIS,The Journal of Strategic Information Systems,Elsevier,$dblp/journals/jsis,C,Jrn,DB
+315,DSE,Data Science and Engineering,CCF,$dblp/journals/dase,C,Jrn,DB
+316,SIGMOD,ACM SIGMOD Conference,ACM,$dblp/conf/sigmod,A,Conf,DB
+317,SIGKDD,ACM SIGKDD Conference on Knowledge Discovery and Data Mining,ACM,$dblp/conf/kdd,A,Conf,DB
+318,ICDE,IEEE International Conference on Data Engineering,IEEE,$dblp/conf/icde,A,Conf,DB
+319,SIGIR,International ACM SIGIR Conference on Research and Development in Information Retrieval,ACM,$dblp/conf/sigir,A,Conf,DB
+320,VLDB,International Conference on Very Large Data Bases,Morgan Kaufmann/ACM,$dblp/conf/vldb,A,Conf,DB
+321,CIKM,ACM International Conference on Information and Knowledge Management,ACM,$dblp/conf/cikm,B,Conf,DB
+322,WSDM,ACM International Conference on Web Search and Data Mining,ACM,$dblp/conf/wsdm,B,Conf,DB
+323,PODS,ACM SIGMOD-SIGACT-SIGAI Symposium on Principles of Database Systems,ACM,$dblp/conf/pods,B,Conf,DB
+324,DASFAA,International Conference on Database Systems for Advanced Applications,Springer,$dblp/conf/dasfaa,B,Conf,DB
+325,ECML-PKDD,European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases,Springer,$dblp/conf/ecml,B,Conf,DB
+326,ISWC,IEEE International Semantic Web Conference,IEEE,$dblp/conf/semweb,B,Conf,DB
+327,ICDM,IEEE International Conference on Data Mining,IEEE,$dblp/conf/icdm,B,Conf,DB
+328,ICDT,International Conference on Database Theory,Springer,$dblp/conf/icdt,B,Conf,DB
+329,EDBT,International Conference on Extending Database Technology,Springer,$dblp/conf/edbt,B,Conf,DB
+330,CIDR,Conference on Innovative Data Systems Research,Online Proceeding,$dblp/conf/cidr,B,Conf,DB
+331,SDM,SIAM International Conference on Data Mining,SIAM,$dblp/conf/sdm,B,Conf,DB
+332,RecSys,ACM Conference on Recommender Systems,ACM,$dblp/conf/recsys,B,Conf,DB
+333,APWeb,Asia Pacific Web Conference,Springer,$dblp/conf/apweb,C,Conf,DB
+334,DEXA,International Conference on Database and Expert System Applications,Springer,$dblp/conf/dexa,C,Conf,DB
+335,ECIR,European Conference on Information Retrieval,Springer,$dblp/conf/ecir,C,Conf,DB
+336,ESWC,Extended Semantic Web Conference,Elsevier,$dblp/conf/esws,C,Conf,DB
+337,WebDB,International Workshop on Web and Databases,ACM,$dblp/conf/webdb,C,Conf,DB
+338,ER,International Conference on Conceptual Modeling,Springer,$dblp/conf/er,C,Conf,DB
+339,MDM,International Conference on Mobile Data Management,IEEE,$dblp/conf/mdm,C,Conf,DB
+340,SSDBM,International Conference on Scientific and Statistical Database Management,IEEE,$dblp/conf/ssdbm,C,Conf,DB
+341,WAIM,International Conference on Web Age Information Management,Springer,$dblp/conf/waim,C,Conf,DB
+342,SSTD,International Symposium on Spatial and Temporal Databases,Springer,$dblp/conf/ssd,C,Conf,DB
+343,PAKDD,Pacific-Asia Conference on Knowledge Discovery and Data Mining,Springer,$dblp/conf/pakdd,C,Conf,DB
+344,WISE,Web Information Systems Engineering,Springer,$dblp/conf/wise,C,Conf,DB
+345,ADMA,International Conference on Advanced Data Mining and Applications,Springer,$dblp/conf/adma,C,Conf,DB
+346,TIT,IEEE Transactions on Information Theory,IEEE,$dblp/journals/tit,A,Jrn,CS
+347,IANDC,Information and Computation,Elsevier,$dblp/journals/iandc,A,Jrn,CS
+348,SICOMP,SIAM Journal on Computing,SIAM,$dblp/journals/siamcomp,A,Jrn,CS
+349,TALG,ACM Transactions on Algorithms,ACM,$dblp/journals/talg,B,Jrn,CS
+350,TOCL,ACM Transactions on Computational Logic,ACM,$dblp/journals/tocl,B,Jrn,CS
+351,TOMS,ACM Transactions on Mathematical Software,ACM,$dblp/journals/toms,B,Jrn,CS
+352,,Algorithmica,Springer,$dblp/journals/algorithmica,B,Jrn,CS
+353,CC,Computational Complexity,Springer,$dblp/journals/cc,B,Jrn,CS
+354,FAC,Formal Aspects of Computing,Springer,$dblp/journals/fac,B,Jrn,CS
+355,FMSD,Formal Methods in System Design,Springer,$dblp/journals/fmsd,B,Jrn,CS
+356,INFORMS,INFORMS Journal on Computing,INFORMS,$dblp/journals/informs,B,Jrn,CS
+357,JCSS,Journal of Computer and System Sciences,Elsevier,$dblp/journals/jcss,B,Jrn,CS
+358,JGO,Journal of Global Optimization,Springer,$dblp/journals/jgo,B,Jrn,CS
+359,JSC,Journal of Symbolic Computation,Elsevier,$dblp/journals/jsc,B,Jrn,CS
+360,MSCS,Mathematical Structures in Computer Science,Cambridge University Press,$dblp/journals/mscs,B,Jrn,CS
+361,TCS,Theoretical Computer Science,Elsevier,$dblp/journals/tcs,B,Jrn,CS
+362,ACTA,Acta Informatica,Springer,$dblp/journals/acta,C,Jrn,CS
+363,APAL,Annals of Pure and Applied Logic,Elsevier,$dblp/journals/apal,C,Jrn,CS
+364,DAM,Discrete Applied Mathematics,Elsevier,$dblp/journals/dam,C,Jrn,CS
+365,FUIN,Fundamenta Informaticae,IOS Press,$dblp/journals/fuin,C,Jrn,CS
+366,IPL,Information Processing Letters,Elsevier,$dblp/journals/ipl,C,Jrn,CS
+367,JCOMPLEXITY,Journal of Complexity,Elsevier,$dblp/journals/jc,C,Jrn,CS
+368,LOGCOM,Journal of Logic and Computation,Oxford University Press,$dblp/journals/logcom,C,Jrn,CS
+369,JSL,Journal of Symbolic Logic,Association for Symbolic Logic,$dblp/journals/jsyml,C,Jrn,CS
+370,LMCS,Logical Methods in Computer Science,LMCS,$dblp/journals/lmcs,C,Jrn,CS
+371,SIDMA,SIAM Journal on Discrete Mathematics,SIAM,$dblp/journals/siamdm,C,Jrn,CS
+372,,Theory of Computing Systems,Springer,$dblp/journals/mst,C,Jrn,CS
+373,STOC,ACM Symposium on the Theory of Computing,ACM,$dblp/conf/stoc,A,Conf,CS
+374,SODA,ACM-SIAM Symposium on Discrete Algorithms,SIAM,$dblp/conf/soda,A,Conf,CS
+375,CAV,International Conference on Computer Aided Verification,Springer,$dblp/conf/cav,A,Conf,CS
+376,FOCS,IEEE Annual Symposium on Foundations of Computer Science,IEEE,$dblp/conf/focs,A,Conf,CS
+377,LICS,ACM/IEEE Symposium on Logic in Computer Science,IEEE,$dblp/conf/lics,A,Conf,CS
+378,SoCG,International Symposium on Computational Geometry,ACM,$dblp/conf/compgeom,B,Conf,CS
+379,ESA,European Symposium on Algorithms,Springer,$dblp/conf/esa,B,Conf,CS
+380,CCC,Conference on Computational Complexity,IEEE,$dblp/conf/coco,B,Conf,CS
+381,ICALP,"International Colloquium on Automata, Languages and Programming",Springer,$dblp/conf/icalp,B,Conf,CS
+382,CADE/IJCAR,International Conference on Automated Deduction/International Joint Conference on Automated Reasoning,Springer,$dblp/conf/cade,B,Conf,CS
+383,CONCUR,International Conference on Concurrency Theory,Springer,$dblp/conf/concur,B,Conf,CS
+384,HSCC,International Conference on Hybrid Systems: Computation and Control,Springer and ACM,$dblp/conf/hybrid,B,Conf,CS
+385,SAT,International Conference on Theory and Applications of Satisfiability Testing,Springer,$dblp/conf/sat,B,Conf,CS
+386,COCOON,International Computing and Combinatorics Conference,Springer,$dblp/conf/cocoon,B,Conf,CS
+387,CSL,Computer Science Logic,Springer,$dblp/conf/csl,C,Conf,CS
+388,FMCAD,Formal Methods in Computer-Aided Design,ACM,$dblp/conf/fmcad,C,Conf,CS
+389,FSTTCS,Foundations of Software Technology and Theoretical Computer Science,Indian Association for Research in Computing Science,$dblp/conf/fsttcs,C,Conf,CS
+390,DSAA,IEEE International Conference on Data Science and Advanced Analytics,IEEE,$dblp/conf/dsaa,C,Conf,CS
+391,ICTAC,International Colloquium on Theoretical Aspects of Computing,Springer,$dblp/conf/ictac,C,Conf,CS
+392,IPCO,International Conference on Integer Programming and Combinatorial Optimization,Springer,$dblp/conf/ipco,C,Conf,CS
+393,RTA,International Conference on Rewriting Techniques and Applications,Springer,$dblp/conf/rta,C,Conf,CS
+394,ISAAC,International Symposium on Algorithms and Computation,Springer,$dblp/conf/isaac,C,Conf,CS
+395,MFCS,International Conference on Mathematical Foundations of Computer Science,Springer,$dblp/conf/mfcs,C,Conf,CS
+396,STACS,Symposium on Theoretical Aspects of Computer Science,Springer,$dblp/conf/stacs,C,Conf,CS
+397,SETTA,"International Symposium on Dependable Software Engineering: Theories, Tools, and Applications",Springer,$dblp/conf/setta,C,Conf,CS
+398,TOG,ACM Transactions on Graphics,ACM,$dblp/journals/tog,A,Jrn,GM
+399,TIP,IEEE Transactions on Image Processing,IEEE,$dblp/journals/tip,A,Jrn,GM
+400,TVCG,IEEE Transactions on Visualization and Computer Graphics,IEEE,$dblp/journals/tvcg,A,Jrn,GM
+401,TOMM,"ACM Transactions on Multimedia Computing, Communications and Applications",ACM,$dblp/journals/tomccap,B,Jrn,GM
+402,CAGD,Computer Aided Geometric Design,Elsevier,$dblp/journals/cagd,B,Jrn,GM
+403,CGF,Computer Graphics Forum,Wiley,$dblp/journals/cgf,B,Jrn,GM
+404,CAD,Computer-Aided Design,Elsevier,$dblp/journals/cad,B,Jrn,GM
+405,GM,Graphical Models,Elsevier,$dblp/journals/cvgip,B,Jrn,GM
+406,TCSVT,IEEE Transactions on Circuits and Systems for Video Technology,IEEE,$dblp/journals/tcsv,B,Jrn,GM
+407,TMM,IEEE Transactions on Multimedia,IEEE,$dblp/journals/tmm,B,Jrn,GM
+408,JASA,The Journal of the Acoustical Society of America,AIP,http://scitation.aip.org/content/asa/journal/jasa,B,Jrn,GM
+409,SIIMS,SIAM Journal on Imaging Sciences,SIAM,$dblp/journals/siamis,B,Jrn,GM
+410,SPECOM,Speech Communication,Elsevier,$dblp/journals/speech,B,Jrn,GM
+411,CGTA,Computational Geometry: Theory and Applications,Elsevier,$dblp/journals/comgeo,C,Jrn,GM
+412,CAVW,Computer Animation & Virtual Worlds,Wiley,$dblp/journals/jvca,C,Jrn,GM
+413,C&G,Computers & Graphics,Elsevier,$dblp/journals/cg,C,Jrn,GM
+414,DCG,Discrete & Computational Geometry,Springer,$dblp/journals/dcg,C,Jrn,GM
+415,SPL,IEEE Signal Processing Letters,IEEE,$dblp/journals/spl,C,Jrn,GM
+416,IET-IPR,IET Image Processing,IET,$dblp/journals/iet-ipr,C,Jrn,GM
+417,JVCIR,Journal of Visual Communication and Image Representation,Elsevier,$dblp/journals/jvcir,C,Jrn,GM
+418,MS,Multimedia Systems,Springer,$dblp/journals/mms,C,Jrn,GM
+419,MTA,Multimedia Tools and Applications,Springer,$dblp/journals/mta,C,Jrn,GM
+420,SIGPRO,Signal Processing,Elsevier,$dblp/journals/sigpro,C,Jrn,GM
+421,IMAGE,Signal Processing: Image Communication,Elsevier,$dblp/journals/spic,C,Jrn,GM
+422,TVC,The Visual Computer,Springer,$dblp/journals/vc,C,Jrn,GM
+423,CVMJ,Computational Visual Media,Tsinghua University; Springer,$dblp/journals/cvm,C,Jrn,GM
+424,ACM MM,ACM International Conference on Multimedia,ACM,$dblp/conf/mm,A,Conf,GM
+425,SIGGRAPH,ACM Special Interest Group on Computer Graphics,ACM,$dblp/conf/siggraph,A,Conf,GM
+426,VR,IEEE Virtual Reality,IEEE,$dblp/conf/vr,A,Conf,GM
+427,IEEE VIS,IEEE Visualization Conference,IEEE,$dblp/conf/visualization,A,Conf,GM
+428,ICMR,ACM SIGMM International Conference on Multimedia Retrieval,ACM,$dblp/conf/mir,B,Conf,GM
+429,I3D,ACM SIGGRAPH Symposium on Interactive 3D Graphics and Games,ACM,$dblp/conf/si3d,B,Conf,GM
+430,SCA,ACM SIGGRAPH/Eurographics Symposium on Computer Animation,ACM,$dblp/conf/sca,B,Conf,GM
+431,DCC,Data Compression Conference,IEEE,$dblp/conf/dcc,B,Conf,GM
+432,Eurographics,Annual Conference of the European Association for Computer Graphics,Wiley/Blackwell,$dblp/conf/eurographics,B,Conf,GM
+433,EuroVis,Eurographics Conference on Visualization,ACM,$dblp/conf/vissym,B,Conf,GM
+434,SGP,Eurographics Symposium on Geometry Processing,Wiley/Blackwell,$dblp/conf/sgp,B,Conf,GM
+435,EGSR,Eurographics Symposium on Rendering,Wiley/Blackwell,$dblp/conf/rt,B,Conf,GM
+436,ICASSP,"IEEE International Conference on Acoustics, Speech and Signal Processing",IEEE,$dblp/conf/icassp,B,Conf,GM
+437,ICME,IEEE International Conference on Multimedia & Expo,IEEE,$dblp/conf/icmcs,B,Conf,GM
+438,ISMAR,International Symposium on Mixed and Augmented Reality,IEEE/ACM,$dblp/conf/ismar,B,Conf,GM
+439,PG,Pacific Conference on Computer Graphics and Applications,Wiley/Blackwell,$dblp/conf/pg,B,Conf,GM
+440,SPM,Symposium on Solid and Physical Modeling,SMA/Elsevier,$dblp/conf/sma,B,Conf,GM
+441,VRST,ACM Symposium on Virtual Reality Software and Technology,ACM,$dblp/conf/vrst,C,Conf,GM
+442,CASA,International Conference on Computer Animation and Social Agents,Wiley,$dblp/conf/ca,C,Conf,GM
+443,CGI,Computer Graphics International,Springer,$dblp/conf/cgi,C,Conf,GM
+444,INTERSPEECH,Conference of the International Speech Communication Association,,$dblp/conf/interspeech,C,Conf,GM
+445,GMP,Geometric Modeling and Processing,Elsevier,$dblp/conf/gmp,C,Conf,GM
+446,PacificVis,IEEE Pacific Visualization Symposium,IEEE,$dblp/conf/apvis,C,Conf,GM
+447,3DV,International Conference on 3D Vision,IEEE,$dblp/conf/3dim,C,Conf,GM
+448,CAD/Graphics,International Conference on Computer-Aided Design and Computer Graphics,IEEE,$dblp/conf/cadgraphics,C,Conf,GM
+449,ICIP,IEEE International Conference on Image Processing,IEEE,$dblp/conf/icip,C,Conf,GM
+450,MMM,International Conference on Multimedia Modeling,Springer,$dblp/conf/mmm,C,Conf,GM
+451,MMAsia,ACM Multimedia Asia,ACM,$dblp/conf/mmasia,C,Conf,GM
+452,SMI,Shape Modeling International,IEEE,$dblp/conf/smi,C,Conf,GM
+453,ICVRV,International Conference on Virtual Reality and Visualization,IEEE,https://www.computer.org/csdl/proceedings/1800579,C,Conf,GM
+454,CVM,Computational Visual Media,Tsinghua University,$dblp/conf/cvm,C,Conf,GM
+455,PRCV,Chinese Conference on Pattern Recognition and Computer Vision 中国模式识别与计算机视觉大会,Springer,$dblp/conf/prcv,C,Conf,GM
+456,AI,Artificial Intelligence,Elsevier,$dblp/journals/ai,A,Jrn,AI
+457,TPAMI,IEEE Transactions on Pattern Analysis and Machine Intelligence,IEEE,$dblp/journals/pami,A,Jrn,AI
+458,IJCV,International Journal of Computer Vision,Springer,$dblp/journals/ijcv,A,Jrn,AI
+459,JMLR,Journal of Machine Learning Research,MIT Press,$dblp/journals/jmlr,A,Jrn,AI
+460,TAP,ACM Transactions on Applied Perception,ACM,$dblp/journals/tap,B,Jrn,AI
+461,AAMAS,Autonomous Agents and Multi-Agent Systems,Springer,$dblp/journals/aamas,B,Jrn,AI
+462,CoLi,Computational Linguistics,MIT Press,$dblp/journals/coling,B,Jrn,AI
+463,CVIU,Computer Vision and Image Understanding,Elsevier,$dblp/journals/cviu,B,Jrn,AI
+464,DKE,Data & Knowledge Engineering,Elsevier,$dblp/journals/dke,B,Jrn,AI
+465,EC,Evolutionary Computation,MIT Press,$dblp/journals/ec,B,Jrn,AI
+466,TAC,IEEE Transactions on Affective Computing,IEEE,$dblp/journals/taffco,B,Jrn,AI
+467,TASLP,"IEEE/ACM Transactions on Audio, Speech, and Language Processing",IEEE,$dblp/journals/taslp,B,Jrn,AI
+468,,IEEE Transactions on Cybernetics,IEEE,$dblp/journals/tcyb,B,Jrn,AI
+469,TEC,IEEE Transactions on Evolutionary Computation,IEEE,$dblp/journals/tec,B,Jrn,AI
+470,TFS,IEEE Transactions on Fuzzy Systems,IEEE,$dblp/journals/tfs,B,Jrn,AI
+471,TNNLS,IEEE Transactions on Neural Networks and learning systems,IEEE,$dblp/journals/tnn,B,Jrn,AI
+472,IJAR,International Journal of Approximate Reasoning,Elsevier,$dblp/journals/ijar,B,Jrn,AI
+473,JAIR,Journal of Artificial Intelligence Research,AAAI,$dblp/journals/jair,B,Jrn,AI
+474,JAR,Journal of Automated Reasoning,Springer,$dblp/journals/jar,B,Jrn,AI
+475,JSLHR,"Journal of Speech, Language, and Hearing Research",American Speech-Language Hearing Association,http://jslhr.pubs.asha.org,B,Jrn,AI
+476,,Machine Learning,Springer,$dblp/journals/ml,B,Jrn,AI
+477,,Neural Computation,MIT Press,$dblp/journals/neco,B,Jrn,AI
+478,,Neural Networks,Elsevier,$dblp/journals/nn,B,Jrn,AI
+479,PR,Pattern Recognition,Elsevier,$dblp/conf/par,B,Jrn,AI
+480,TACL,Transactions of the Association for Computational Linguistics,ACL,$dblp/conf/tacl,B,Jrn,AI
+481,TALLIP,ACM Transactions on Asian and Low-Resource Language Information Processing,ACM,$dblp/journals/talip,C,Jrn,AI
+482,,Applied Intelligence,Springer,$dblp/journals/apin,C,Jrn,AI
+483,AIM,Artificial Intelligence in Medicine,Elsevier,$dblp/journals/artmed,C,Jrn,AI
+484,,Artificial Life,MIT Press,$dblp/journals/alife,C,Jrn,AI
+485,,Computational Intelligence,Wiley,$dblp/journals/ci,C,Jrn,AI
+486,,Computer Speech & Language,Elsevier,$dblp/journals/csl,C,Jrn,AI
+487,,Connection Science,Taylor & Francis,$dblp/journals/connection,C,Jrn,AI
+488,DSS,Decision Support Systems,Elsevier,$dblp/journals/dss,C,Jrn,AI
+489,EAAI,Engineering Applications of Artificial Intelligence,Elsevier,$dblp/journals/eaai,C,Jrn,AI
+490,,Expert Systems,Blackwell/Wiley,$dblp/journals/es,C,Jrn,AI
+491,ESWA,Expert Systems with Applications,Elsevier,$dblp/journals/eswa,C,Jrn,AI
+492,,Fuzzy Sets and Systems,Elsevier,$dblp/journals/fss,C,Jrn,AI
+493,TG,IEEE Transactions on Games,IEEE,$dblp/journals/tciaig,C,Jrn,AI
+494,IET-CVI,IET Computer Vision,IET,$dblp/journals/iet-cvi,C,Jrn,AI
+495,,IET Signal Processing,IET,$dblp/journals/iet-spr,C,Jrn,AI
+496,IVC,Image and Vision Computing,Elsevier,$dblp/journals/ivc,C,Jrn,AI
+497,IDA,Intelligent Data Analysis,IOS Press,$dblp/journals/ida,C,Jrn,AI
+498,IJCIA,International Journal of Computational Intelligence and Applications,World Scientific,$dblp/journals/ijcia,C,Jrn,AI
+499,IJIS,International Journal of Intelligent Systems,Wiley,$dblp/journals/ijis,C,Jrn,AI
+500,IJNS,International Journal of Neural Systems,World Scientific,$dblp/journals/ijns,C,Jrn,AI
+501,IJPRAI,International Journal of Pattern Recognition and Artificial Intelligence,World Scientific,$dblp/journals/ijprai,C,Jrn,AI
+502,IJUFKS,"International Journal of Uncertainty, Fuzziness and Knowledge-Based Systems",World Scientific,$dblp/journals/ijufks,C,Jrn,AI
+503,IJDAR,International Journal on Document Analysis and Recognition,Springer,$dblp/journals/ijdar,C,Jrn,AI
+504,JETAI,Journal of Experimental and Theoretical Artificial Intelligence,Taylor & Francis,$dblp/journals/jetai,C,Jrn,AI
+505,KBS,Knowledge-Based Systems,Elsevier,$dblp/journals/kbs,C,Jrn,AI
+506,,Machine Translation,Springer,$dblp/journals/mt,C,Jrn,AI
+507,,Machine Vision and Applications,Springer,$dblp/journals/mva,C,Jrn,AI
+508,,Natural Computing,Springer,$dblp/journals/nc,C,Jrn,AI
+509,NLE,Natural Language Engineering,Cambridge University Press,$dblp/journals/nle,C,Jrn,AI
+510,NCA,Neural Computing and Applications,Springer,$dblp/journals/nca,C,Jrn,AI
+511,NPL,Neural Processing Letters,Springer,$dblp/journals/npl,C,Jrn,AI
+512,,Neurocomputing,Elsevier,$dblp/journals/ijon,C,Jrn,AI
+513,PAA,Pattern Analysis and Applications,Springer,$dblp/journals/paa,C,Jrn,AI
+514,PRL,Pattern Recognition Letters,Elsevier,$dblp/journals/prl,C,Jrn,AI
+515,,Soft Computing,Springer,$dblp/journals/soco,C,Jrn,AI
+516,WI,Web Intelligence,IOS Press,$dblp/journals/wias,C,Jrn,AI
+517,TIIS,ACM Transactions on Interactive Intelligent Systems,ACM,$dblp/journals/tiis,C,Jrn,AI
+518,AAAI,AAAI Conference on Artificial Intelligence,AAAI,$dblp/conf/aaai,A,Conf,AI
+519,NeurIPS,Conference on Neural Information Processing Systems,MIT Press,$dblp/conf/nips,A,Conf,AI
+520,ACL,Annual Meeting of the Association for Computational Linguistics,ACL,$dblp/conf/acl,A,Conf,AI
+521,CVPR,IEEE/CVF Computer Vision and Pattern Recognition Conference,IEEE,$dblp/conf/cvpr,A,Conf,AI
+522,ICCV,International Conference on Computer Vision,IEEE,$dblp/conf/iccv,A,Conf,AI
+523,ICML,International Conference on Machine Learning,ACM,$dblp/conf/icml,A,Conf,AI
+524,IJCAI,International Joint Conference on Artificial Intelligence,Morgan Kaufmann,$dblp/conf/ijcai,A,Conf,AI
+525,COLT,Annual Conference on Computational Learning Theory,Springer,$dblp/conf/colt,B,Conf,AI
+526,EMNLP,Conference on Empirical Methods in Natural Language Processing,ACL,$dblp/conf/emnlp,B,Conf,AI
+527,ECAI,European Conference on Artificial Intelligence,IOS Press,$dblp/conf/ecai,B,Conf,AI
+528,ECCV,European Conference on Computer Vision,Springer,$dblp/conf/eccv,B,Conf,AI
+529,ICRA,IEEE International Conference on Robotics and Automation,IEEE,$dblp/conf/icra,B,Conf,AI
+530,ICAPS,International Conference on Automated Planning and Scheduling,AAAI,$dblp/conf/aips,B,Conf,AI
+531,ICCBR,International Conference on Case-Based Reasoning,Springer,$dblp/conf/iccbr,B,Conf,AI
+532,COLING,International Conference on Computational Linguistics,International Committee on Computational Linguistics,$dblp/conf/coling,B,Conf,AI
+533,KR,International Conference on Principles of Knowledge Representation and Reasoning,Morgan Kaufmann,$dblp/conf/kr,B,Conf,AI
+534,UAI,Conference on Uncertainty in Artificial Intelligence,AUAI,$dblp/conf/uai,B,Conf,AI
+535,AAMAS,International Joint Conference on Autonomous Agents and Multi-agent Systems,Springer,$dblp/conf/atal,B,Conf,AI
+536,PPSN,Parallel Problem Solving from Nature,Springer,$dblp/conf/ppsn,B,Conf,AI
+537,NAACL,North American Chapter of the Association for Computational Linguistics,ACL,$dblp/conf/naacl,B,Conf,AI
+538,AISTATS,International Conference on Artificial Intelligence and Statistics,JMLR,$dblp/conf/aistats,C,Conf,AI
+539,ACCV,Asian Conference on Computer Vision,Springer,$dblp/conf/accv,C,Conf,AI
+540,ACML,Asian Conference on Machine Learning,JMLR,$dblp/conf/acml,C,Conf,AI
+541,BMVC,British Machine Vision Conference,British Machine Vision Association,$dblp/conf/bmvc,C,Conf,AI
+542,NLPCC,CCF International Conference on Natural Language Processing and Chinese Computing,Springer,$dblp/conf/nlpcc,C,Conf,AI
+543,CoNLL,Conference on Computational Natural Language Learning,ACL,$dblp/conf/conll,C,Conf,AI
+544,GECCO,Genetic and Evolutionary Computation Conference,ACM,$dblp/conf/gecco,C,Conf,AI
+545,ICTAI,IEEE International Conference on Tools with Artificial Intelligence,IEEE,$dblp/conf/ictai,C,Conf,AI
+546,IROS,IEEE/RSJ International Conference on Intelligent Robots and Systems,IEEE,$dblp/conf/iros,C,Conf,AI
+547,ALT,International Conference on Algorithmic Learning Theory,Springer,$dblp/conf/alt,C,Conf,AI
+548,ICANN,International Conference on Artificial Neural Networks,Springer,$dblp/conf/icann,C,Conf,AI
+549,FG,IEEE International Conference on Automatic Face and Gesture Recognition,IEEE,$dblp/conf/fgr,C,Conf,AI
+550,ICDAR,International Conference on Document Analysis and Recognition,IEEE,$dblp/conf/icdar,C,Conf,AI
+551,ILP,International Conference on Inductive Logic Programming,Springer,$dblp/conf/ilp,C,Conf,AI
+552,KSEM,"International conference on Knowledge Science, Engineering and Management",Springer,$dblp/conf/ksem,C,Conf,AI
+553,ICONIP,International Conference on Neural Information Processing,Springer,$dblp/conf/iconip,C,Conf,AI
+554,ICPR,International Conference on Pattern Recognition,IEEE,$dblp/conf/icpr,C,Conf,AI
+555,ICB,International Joint Conference on Biometrics,IEEE,$dblp/conf/icb,C,Conf,AI
+556,IJCNN,International Joint Conference on Neural Networks,IEEE,$dblp/conf/ijcnn,C,Conf,AI
+557,PRICAI,Pacific Rim International Conference on Artificial Intelligence,Springer,$dblp/conf/pricai,C,Conf,AI
+558,TOCHI,ACM Transactions on Computer-Human Interaction,ACM,$dblp/journals/tochi,A,Jrn,HC
+559,IJHCS,International Journal of Human-Computer Studies,Elsevier,$dblp/journals/ijmms,A,Jrn,HC
+560,CSCW,Computer Supported Cooperative Work,Springer,$dblp/journals/cscw,B,Jrn,HC
+561,HCI,Human-Computer Interaction,Taylor & Francis,$dblp/journals/hhci,B,Jrn,HC
+562,,IEEE Transactions on Human-Machine Systems,IEEE,$dblp/journals/thms,B,Jrn,HC
+563,IWC,Interacting with Computers,Oxford University Press,$dblp/journals/iwc,B,Jrn,HC
+564,IJHCI,International Journal of Human-Computer Interaction,Taylor & Francis,$dblp/journals/ijhci,B,Jrn,HC
+565,UMUAI,User Modeling and User-Adapted Interaction,Springer,$dblp/journals/umuai,B,Jrn,HC
+566,TSMC,"IEEE Transactions on Systems, Man, and Cybernetics: Systems",IEEE,$dblp/journals/tsmc,B,Jrn,HC
+567,BIT,Behaviour & Information Technology,Taylor & Francis,$dblp/journals/behaviourIT,C,Jrn,HC
+568,PUC,Personal and Ubiquitous Computing,Springer,$dblp/journals/puc,C,Jrn,HC
+569,PMC,Pervasive and Mobile Computing,Elsevier,$dblp/journals/percom,C,Jrn,HC
+570,PACMHCI,Proceedings of the ACM on Human-Computer Interaction,ACM,$dblp/journals/pacmhci,C,Jrn,HC
+571,CSCW,ACM Conference on Computer Supported Cooperative Work and Social Computing,ACM,$dblp/conf/cscw,A,Conf,HC
+572,CHI,ACM Conference on Human Factors in Computing Systems,ACM,$dblp/conf/chi,A,Conf,HC
+573,UbiComp,ACM International Joint Conference on Pervasive and Ubiquitous Computing,ACM,$dblp/conf/huc,A,Conf,HC
+574,UIST,ACM Symposium on User Interface Software and Technology,ACM,$dblp/conf/uist,A,Conf,HC
+575,GROUP,ACM International Conference on Supporting Group Work,ACM,$dblp/conf/group,B,Conf,HC
+576,IUI,ACM International Conference on Intelligent User Interfaces,ACM,$dblp/conf/iui,B,Conf,HC
+577,ITS,ACM International Conference on Interactive Tabletops and Surfaces,ACM,$dblp/conf/tabletop,B,Conf,HC
+578,ECSCW,European Conference on Computer Supported Cooperative Work,Springer,$dblp/conf/ecscw,B,Conf,HC
+579,PERCOM,IEEE International Conference on Pervasive Computing and Communications,IEEE,$dblp/conf/percom,B,Conf,HC
+580,MobileHCI,ACM International Conference on Mobile Human-Computer Interaction,ACM,$dblp/conf/mhci,B,Conf,HC
+581,ICWSM,The International AAAI Conference on Web and Social Media,AAAI,$dblp/conf/icwsm,B,Conf,HC
+582,DIS,ACM SIGCHI Conference on Designing Interactive Systems,ACM,$dblp/conf/ACMdis,C,Conf,HC
+583,ICMI,ACM International Conference on Multimodal Interaction,ACM,$dblp/conf/icmi,C,Conf,HC
+584,ASSETS,International ACM SIGACCESS Conference on Computers and Accessibility,ACM,$dblp/conf/assets,C,Conf,HC
+585,GI,Graphics Interface,ACM,$dblp/conf/graphicsinterface,C,Conf,HC
+586,UIC,IEEE International Conference on Ubiquitous Intelligence and Computing,IEEE,$dblp/conf/uic,C,Conf,HC
+587,,IEEE World Haptics Conference,IEEE,$dblp/conf/haptics,C,Conf,HC
+588,INTERACT,International Conference on Human-Computer Interaction of International Federation for Information Processing,IFIP,$dblp/conf/interact,C,Conf,HC
+589,IDC,ACM Interaction Design and Children,ACM,$dblp/conf/acmidc,C,Conf,HC
+590,CollaborateCom,"International Conference on Collaborative Computing: Networking, Applications and Worksharing",Springer,$dblp/conf/colcom,C,Conf,HC
+591,CSCWD,International Conference on Computer Supported Cooperative Work in Design,Springer,$dblp/conf/cscwd,C,Conf,HC
+592,CoopIS,International Conference on Cooperative Information Systems,Springer,$dblp/conf/coopis,C,Conf,HC
+593,MobiQuitous,"International Conference on Mobile and Ubiquitous Systems: Computing,Networking and Services",Springer,$dblp/conf/mobiquitous,C,Conf,HC
+594,AVI,International Working Conference on Advanced Visual Interfaces,ACM,$dblp/conf/avi,C,Conf,HC
+595,JACM,Journal of the ACM,ACM,$dblp/journals/jacm,A,Jrn,SN
+596,Proc. IEEE,Proceedings of the IEEE,IEEE,$dblp/journals/pieee,A,Jrn,SN
+597,SCIS,Science China Information Sciences,Science in China Press/Springer,$dblp/journals/chinaf,A,Jrn,SN
+598,,Bioinformatics,Oxford University Press,$dblp/journals/bioinformatics,B,Jrn,SN
+599,,Briefings in Bioinformatics,Oxford University Press,$dblp/journals/bib,B,Jrn,SN
+600,,Cognition,Elsevier,http://www.journals.elsevier.com/cognition,B,Jrn,SN
+601,TASAE,IEEE Transactions on Automation Science and Engineering,IEEE,$dblp/journals/tase,B,Jrn,SN
+602,TGARS,IEEE Transactions on Geoscience and Remote Sensing,IEEE,$dblp/journals/tgrs,B,Jrn,SN
+603,TITS,IEEE Transactions on Intelligent Transportation Systems,IEEE,$dblp/journals/tits,B,Jrn,SN
+604,TMI,IEEE Transactions on Medical Imaging,IEEE,$dblp/journals/tmi,B,Jrn,SN
+605,TR,IEEE Transactions on Robotics,IEEE,$dblp/journals/trob,B,Jrn,SN
+606,TCBB,IEEE/ACM Transactions on Computational Biology and Bioinformatics,IEEE/ACM,$dblp/journals/tcbb,B,Jrn,SN
+607,JCST,Journal of Computer Science and Technology,SCIENCE PRESS/Springer,$dblp/journals/jcst,B,Jrn,SN
+608,JAMIA,Journal of the American Medical Informatics Association,BMJ Journals,$dblp/journals/jamia,B,Jrn,SN
+609,,PLOS Computational Biology,Public Library of Science,$dblp/journals/ploscb,B,Jrn,SN
+610,,The Computer Journal,Oxford University Press,$dblp/journals/cj,B,Jrn,SN
+611,WWW,World Wide Web,Springer,$dblp/journals/www,B,Jrn,SN
+612,FCS,Frontiers of Computer Science,Higher Education Press,$dblp/journals/fcsc,B,Jrn,SN
+613,,BMC Bioinformatics,BioMed Central,$dblp/journals/bmcbi,C,Jrn,SN
+614,,Cybernetics and Systems,Taylor & Francis,$dblp/journals/cas,C,Jrn,SN
+615,,IEEE Geoscience and Remote Sensing Letters,IEEE,$dblp/journals/lgrs,C,Jrn,SN
+616,JBHI,IEEE Journal of Biomedical and Health Informatics,IEEE,$dblp/journals/titb,C,Jrn,SN
+617,TBD,IEEE Transactions on Big Data,IEEE,$dblp/journals/tbd,C,Jrn,SN
+618,,IET Intelligent Transport Systems,IET,http://digital-library.theiet.org/content/journals/iet-its,C,Jrn,SN
+619,JBI,Journal of Biomedical Informatics,Elsevier,$dblp/journals/jbi,C,Jrn,SN
+620,,Medical Image Analysis,Elsevier,$dblp/journals/mia,C,Jrn,SN
+621,TII,IEEE Transactions on Industrial Informatics,IEEE,$dblp/journals/tii,C,Jrn,SN
+622,TCPS,ACM Transactions on Cyber-Physical Systems,ACM,$dblp/journals/tcps,C,Jrn,SN
+623,TOCE,ACM Transactions on Computing Education,ACM,$dblp/journals/jeric,C,Jrn,SN
+624,FITEE,Frontiers of Information Technology & Electronic Engineering,Springer,$dblp/journals/jzusc,C,Jrn,SN
+625,TCSS,IEEE Transactions on Computational Social Systems,IEEE,$dblp/journals/tcss,C,Jrn,SN
+626,,IEEE Transactions on Reliability,IEEE,$dblp/journals/tr,C,Jrn,SN
+627,WWW,International World Wide Web Conferences,ACM,$dblp/conf/www,A,Conf,SN
+628,RTSS,IEEE Real-Time Systems Symposium,IEEE,$dblp/conf/rtss,A,Conf,SN
+629,WINE,Conference on Web and Internet Economics,Springer,$dblp/conf/wine,A,Conf,SN
+630,CogSci,Annual Meeting of the Cognitive Science Society,Psychology Press,$dblp/conf/cogsci,B,Conf,SN
+631,BIBM,IEEE International Conference on Bioinformatics and Biomedicine,IEEE,$dblp/conf/bibm,B,Conf,SN
+632,EMSOFT,International Conference on Embedded Software,ACM/IEEE/IFIP,$dblp/conf/emsoft,B,Conf,SN
+633,ISMB,International conference on Intelligent Systems for Molecular Biology,Oxford Journals,$dblp/conf/ismb,B,Conf,SN
+634,RECOMB,Annual International Conference on Research in Computational Molecular Biology,Springer,$dblp/conf/recomb,B,Conf,SN
+635,MICCAI,International Conference on Medical Image Computing and Computer-Assisted Intervention,Springer,$dblp/conf/miccai,B,Conf,SN
+636,AMIA,American Medical Informatics Association Annual Symposium,AMIA,$dblp/conf/amia,C,Conf,SN
+637,APBC,Asia Pacific Bioinformatics Conference,BioMed Central,$dblp/conf/apbc,C,Conf,SN
+638,IEEE BigData,IEEE International Conference on Big Data,IEEE,$dblp/conf/bigdataconf,C,Conf,SN
+639,IEEE CLOUD,IEEE International Conference on Cloud Computing,IEEE,$dblp/conf/IEEEcloud,C,Conf,SN
+640,SMC,"IEEE International Conference on Systems, Man, and Cybernetics",IEEE,$dblp/conf/smc,C,Conf,SN
+641,COSIT,International Conference on Spatial Information Theory,ACM,$dblp/conf/cosit,C,Conf,SN
+642,ISBRA,International Symposium on Bioinformatics Research and Applications,Springer,$dblp/conf/isbra,C,Conf,SN
+643,SAGT,International Symposium on Algorithmic Game Theory,Springer,$dblp/conf/sagt,C,Conf,SN
+644,SIGSPATIAL,ACM Special Interest Group on Spatial Information,ACM,$dblp/journals/sigspatial,C,Conf,SN
+645,ICIC,International Conference on Intelligent Computing,Springer-Nature,$dblp/conf/icic,C,Conf,SN

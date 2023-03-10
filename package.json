@@ -1,0 +1,23 @@
+{
+    "name": "utools_thesis_tools",
+    "version": "1.2.6",
+    "description": "一些学术小工具",
+    "scripts": {
+        "build": "node esbuild.js",
+        "build:prod": "env NODE_ENV=production node esbuild.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.21.4",
+        "cheerio": "^1.0.0-rc.12",
+        "sqlite3": "^5.0.2"
+    },
+    "devDependencies": {
+        "esbuild": "0.17.11",
+        "esbuild-plugin-copy": "^2.1.0",
+        "esbuild-plugin-dsv": "^0.0.2",
+        "esbuild-plugin-external-package": "^1.0.0",
+        "utools-api-types": "^3.0.0"
+    }
+}
