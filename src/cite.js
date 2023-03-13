@@ -1,10 +1,9 @@
 // @ts-check
 /// <reference path="ccf.extra.d.ts" />
-import csvData from '../assets/ccf-2022.csv'
+import csvData from '../assets/ccf-2022.csv';
 import { ccfParser } from './ccf';
+import { LetpubBaseUrl, letpubQuery } from './letpub';
 import Utils from "./utils";
-import axios from 'axios';
-import * as cheerio from 'cheerio';
 
 // Harvard style
 function harvard_style(sentence) {
@@ -128,43 +127,6 @@ function apa_style(sentence) {
     return res;
 }
 
-const LetpubBaseUrl = "https://www.letpub.com.cn/";
-
-/** @returns {{title: string, description: string, url: string}[] | null} */
-function letpubResultParser(html) {
-    if (html.indexOf("暂无匹配结果，请确认您输入的期刊名和其他搜索条件是否正确。") >= 0) {
-        return null;
-    }
-    let $ = cheerio.load(html);
-    let trs = $("#yxyz_content > table.table_yjfx > tbody > tr:gt(1)");
-    let res = trs.map((i, e) => {
-        if (i != trs.length - 1) {
-            // console.log(e.children[1].children[0].attribs.href);
-            /** @ts-ignore */
-            const index = e.children[3].children[0].data + ' ' + e.children[3].children[3].data;
-            /** @ts-ignore */
-            const zone = e.children[4].children[0].data;
-            /** @ts-ignore */
-            const classy = e.children[5].children[0].data + ' ' + e.children[5].children[3].data
-            return {
-                /** @ts-ignore */
-                title: e.children[1].children[0].children[0].data,
-                description: "中科院" + zone + "  " + classy + "  " + index,
-                /** @ts-ignore */
-                url: LetpubBaseUrl + e.children[1].children[0].attribs.href,
-            };
-        } else {
-            let as = $("#yxyz_content > table.table_yjfx > tbody > tr:last-child > td > form");
-            return {
-                title: '更多内容',
-                description: '打开浏览器查看',
-                url: LetpubBaseUrl + as.prev().prev().attr()?.href
-            }
-        }
-    });
-    return res.get();
-}
-
 /**
  * Guess from CCF lists
  * @param {string} title 
@@ -221,17 +183,10 @@ async function generate_info(res, cite_style, cb) {
                 info.push(result);
             }
             // no await here
-            axios({
-                url: LetpubBaseUrl + "index.php?page=journalapp&view=search&searchname=" + encodeURIComponent(searchWord).replace(/%20/g, '+'),
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-            }).then(response => {
-                const data = response.data;
-                // console.log(data);
-                let res = letpubResultParser(data);
-                // console.log(res);
-                if (res) {
-                    res[0].title += " (LetPub Guess)";
-                    info.push(res[0]);
+            letpubQuery(searchWord, result => {
+                if (result) {
+                    result[0].title += " (LetPub Guess)";
+                    info.push(result[0]);
                 }
                 cb(info);
             });
@@ -264,23 +219,7 @@ function citeSelectCallback(item) {
     window.utools.outPlugin();
 }
 
-export function letpubSearch(searchWord, cb) {
-    if (!searchWord) return cb();
-    searchWord = searchWord.toLowerCase().trim();
-    cb([{ title: searchWord + "..." }]);
-    axios({
-        url: LetpubBaseUrl + "index.php?page=journalapp&view=search&searchname=" + encodeURIComponent(searchWord).replace(/%20/g, '+'),
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    }).then(response => {
-        const data = response.data;
-        let return_info = letpubResultParser(data);
-        if (return_info) {
-            cb(return_info);
-        } else {
-            cb([{ title: "Not Found." }]);
-        }
-    });
-}
+
 
 export const CiteStyles = {
     "APA": apa_style,
