@@ -1,4 +1,7 @@
-interface CsvDataRow {
+// @ts-check
+/// <reference path="node_modules/utools-api-types/index.d.ts" />
+
+declare interface CsvDataRow {
     /** #no */
     n: string,
     /** abbreviation */

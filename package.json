@@ -6,19 +6,21 @@
         "build": "node esbuild.js",
         "build:prod": "env NODE_ENV=production node esbuild.js"
     },
-    "author": "",
+    "author": "ciaranchen",
+    "contributors": [
+        "Dorence Deng"
+    ],
     "license": "ISC",
     "dependencies": {
         "axios": "^0.21.4",
         "better-sqlite3": "^8.2.0",
-        "cheerio": "^1.0.0-rc.12",
-        "sqlite3": "^5.0.2"
+        "sqlite3": "^5.1.5"
     },
     "devDependencies": {
+        "cli-color": "^2.0.3",
         "esbuild": "0.17.11",
         "esbuild-plugin-copy": "^2.1.0",
         "esbuild-plugin-dsv": "^0.0.2",
-        "esbuild-plugin-external-package": "^1.0.0",
         "utools-api-types": "^3.0.0"
     }
 }

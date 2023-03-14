@@ -1,43 +1,101 @@
 // @ts-check
 import axios from 'axios';
-import { load } from 'cheerio';
+/** @ts-ignore @type {import("../tests/debug")} */
+const debug = require("http-debug");
 
 export const LetpubBaseUrl = "https://www.letpub.com.cn/";
 let letpubTimeout;
+
+/**
+ * @param {Element} root 
+ * @param  {...number | string} args 
+ * @returns {Element | string} Invalid data will return ''
+ */
+function toChilren(root, ...args) {
+    /** @type {ReturnType<toChilren>} */
+    let c = root;
+    for (const k of args) {
+        if (null === c || undefined === c) {
+            return '';
+        }
+        if (typeof k === 'number' && c instanceof Element) {
+            // debug.info('c1', k, c.children[k])
+            /** @ts-ignore */
+            c = c.children[k];
+        }
+        else if (typeof k === 'string' && k[0] === '@' && c instanceof Element) {
+            if (k === "@") {
+                // debug.info('c2', k, c.nodeType, c.textContent)
+                /** @ts-ignore */
+                c = Array.from(c.childNodes)
+                    .filter(e => e.nodeType === Node.TEXT_NODE)
+                    .map(e => e.nodeValue)
+                    .join(" ");
+            }
+            else {
+                /** @ts-ignore */
+                c = c.getAttribute(k.substring(1));
+                // debug.info('c3', k, c)
+            }
+        }
+        else {
+            // debug.info('cx', k, c[k])
+            c = c[k];
+        }
+    }
+    // debug.log('c=', c)
+    return c;
+}
 
 /** @returns {{title: string, description: string, url: string}[] | null} */
 function letpubResultParser(html) {
     if (html.indexOf("暂无匹配结果，请确认您输入的期刊名和其他搜索条件是否正确。") >= 0) {
         return null;
     }
-    let $ = load(html);
-    let trs = $("#yxyz_content > table.table_yjfx > tbody > tr:gt(1)");
-    let res = trs.map((i, e) => {
-        if (i != trs.length - 1) {
-            // console.log(e.children[1].children[0].attribs.href);
-            /** @ts-ignore */
-            const index = e.children[3].children[0].data + ' ' + e.children[3].children[3].data;
-            /** @ts-ignore */
-            const zone = e.children[4].children[0].data;
-            /** @ts-ignore */
-            const classy = e.children[5].children[0].data + ' ' + e.children[5].children[3].data
+    const body = html.match(/<body[\S ]*>[\s\S]*<\/body>/m)?.[0] || "";
+    debug.log("letpub:parser:body", body.length, body.substring(0, 60));
+    const doc = new DOMParser().parseFromString(body, "text/html");
+    const table = doc.querySelectorAll("#yxyz_content>.table_yjfx>tbody>tr");
+    const tr = Array.from(table).slice(2);
+    debug.log("tr", tr.length, tr);
+    const res = tr.map(e => {
+        debug.log("letpub:parser:tr", e.childElementCount, e.innerHTML.substring(0, 60))
+        if (e.childElementCount > 1) {
+            const fullName = toChilren(e, 1, 3, "@");
             return {
-                /** @ts-ignore */
-                title: e.children[1].children[0].children[0].data,
-                description: "中科院" + zone + "  " + classy + "  " + index,
-                /** @ts-ignore */
-                url: LetpubBaseUrl + e.children[1].children[0].attribs.href,
+                title: toChilren(e, 1, 0, "@") + (fullName ? (` (${fullName})`) : ""),
+                description: "中科院" + toChilren(e, 4, 0, "@") + "  " + toChilren(e, 5, "@") + "  " + toChilren(e, 3, "@"),
+                url: LetpubBaseUrl + toChilren(e, 1, 0, "@href"),
             };
-        } else {
-            let as = $("#yxyz_content > table.table_yjfx > tbody > tr:last-child > td > form");
+        }
+        else {
+            const td = e.children[0];
             return {
                 title: '更多内容',
                 description: '打开浏览器查看',
-                url: LetpubBaseUrl + as.prev().prev().attr()?.href
-            }
+                url: LetpubBaseUrl + toChilren(td, td.childElementCount - 3, "@href"),
+            };
         }
     });
-    return res.get();
+    return res;
+}
+
+function letpubSearch(searchWord, cb) {
+    if (!searchWord) return cb();
+    debug.log("letpub:search", searchWord);
+    searchWord = searchWord.toLowerCase().trim();
+    cb([{ title: searchWord + "..." }]);
+    letpubQuery(searchWord, result => {
+        if (result) {
+            cb(result);
+        } else {
+            cb([{ title: "Not Found." }]);
+        }
+    });
+}
+
+export function letpubQueryUrl(searchWord) {
+    return LetpubBaseUrl + "index.php?page=journalapp&view=search&searchname=" + encodeURIComponent(searchWord).replace(/%20/g, '+');
 }
 
 /**
@@ -47,24 +105,11 @@ function letpubResultParser(html) {
  */
 export function letpubQuery(searchWord, cb) {
     axios({
-        url: LetpubBaseUrl + "index.php?page=journalapp&view=search&searchname=" + encodeURIComponent(searchWord).replace(/%20/g, '+'),
+        url: letpubQueryUrl(searchWord),
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     }).then(response => {
         const data = response.data;
         cb(letpubResultParser(data))
-    });
-}
-
-function letpubSearch(searchWord, cb) {
-    if (!searchWord) return cb();
-    searchWord = searchWord.toLowerCase().trim();
-    cb([{ title: searchWord + "..." }]);
-    letpubQuery(searchWord, result => {
-        if (result) {
-            cb(result);
-        } else {
-            cb([{ title: "Not Found." }]);
-        }
     });
 }
 

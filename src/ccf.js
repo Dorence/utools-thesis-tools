@@ -1,7 +1,9 @@
 // @ts-check
-/// <reference path="ccf.extra.d.ts" />
-import csvData from '../assets/ccf-2022.csv'
+/// <reference path="extra.d.ts" />
+import csvDataEn from '../assets/ccf-2022.csv'
 import csvDataCn from '../assets/ccf-2022-cn.csv'
+/** @ts-ignore @type {import("../tests/debug")} */
+const debug = require("http-debug");
 
 const topicMap = {
     CA: "计算机体系结构/并行与分布计算/存储系统",
@@ -28,24 +30,43 @@ const langMap = {
 };
 
 /** @param {CsvDataRow} row */
-export function ccfParser(row) {
-    const publisher = row.pub.length <= 10 ? row.pub : (row.pub.substring(0, 10) + '...');
+function ccfEnParser(row) {
+    const publisher = row.pub.length <= 12 ? row.pub : (row.pub.substring(0, 12) + '...');
     const url = row.url.replace('$dblp', 'https://dblp.org/db');
     return {
         title: row.a ? `${row.a} (${row.name})` : row.name,
         description: `${topicMap[row.tp]}  CCF-${row.tier}  ${typeMap[row.type]}  ${publisher}`,
         url: url,
+        searchKey: row.a + row.name + row.pub,
     };
 }
 
+/** @param {CsvDataCnRow} row */
+function ccfCnParser(row) {
+    const publisher = row.pub.length <= 20 ? row.pub : (row.pub.substring(0, 20) + '...');
+    return {
+        title: row.name,
+        description: `CCF-${row.tier}  ${langMap[row.lang]}  ${row.c}  ${publisher}`,
+        url: 'https://qikan.cqvip.com/Qikan/Search/Index?objectType=7&key=' + encodeURIComponent("CN=" + row.c),
+        searchKey: row.name + row.pub,
+    };
+}
+
+export const ccfData = {
+    cn: csvDataCn.map(ccfCnParser),
+    en: csvDataEn.map(ccfEnParser),
+};
+
 export const ccf = {
     enter(action, cb) {
-        cb(csvData.map(ccfParser));
+        debug.log("ccf:enter", ccfData.en.length);
+        cb(ccfData.en);
     },
     search(action, searchWord, cb) {
+        debug.log("ccf:search", searchWord);
         const regexp = new RegExp(searchWord.trim().replace(/\s+/ig, '\\s'), 'i');
-        const result = csvData.filter(row => (row.a + row.name).match(regexp));
-        cb(result.map(ccfParser));
+        const result = ccfData.en.filter(row => row.searchKey.match(regexp));
+        cb(result);
     },
     select(action, item, cb) {
         window.utools.hideMainWindow();
@@ -54,24 +75,16 @@ export const ccf = {
     },
 };
 
-/** @param {CsvDataCnRow} row */
-export function ccfCnParser(row) {
-    const publisher = row.pub.length <= 20 ? row.pub : (row.pub.substring(0, 20) + '...');
-    return {
-        title: row.name,
-        description: `CCF-${row.tier}  ${langMap[row.lang]}  ${row.c}  ${publisher}`,
-        url: 'https://qikan.cqvip.com/Qikan/Search/Index?objectType=7&key=' + encodeURIComponent("CN=" + row.c),
-    };
-}
-
 export const ccfCn = {
     enter(action, cb) {
-        cb(csvDataCn.map(ccfCnParser));
+        debug.log("ccfCn:enter", ccfData.cn.length);
+        cb(ccfData.cn);
     },
     search(action, searchWord, cb) {
+        debug.log("ccfCn:search", searchWord);
         const regexp = new RegExp(searchWord.trim().replace(/\s+/ig, '\\s'), 'i');
-        const result = csvDataCn.filter(row => row.name.match(regexp));
-        cb(result.map(ccfCnParser));
+        const result = ccfData.cn.filter(row => row.searchKey.match(regexp));
+        cb(result);
     },
     select(action, item, cb) {
         window.utools.hideMainWindow();

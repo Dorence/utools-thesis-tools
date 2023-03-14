@@ -1,4 +1,6 @@
 // @ts-check
+/** @ts-ignore @type {import("../tests/debug")} */
+const debug = require("http-debug");
 
 /**
  * 全半角转换
@@ -34,6 +36,7 @@ export const pdf = {
         } else { // Chinese mode
             res = text.replace(/\r?\n/g, '');
         }
+        debug.log("pdf", action.payload.length, res.length);
         window.utools.copyText(res);
         window.utools.outPlugin();
     }

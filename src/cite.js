@@ -1,8 +1,6 @@
 // @ts-check
-/// <reference path="ccf.extra.d.ts" />
-import csvData from '../assets/ccf-2022.csv';
-import { ccfParser } from './ccf';
-import { LetpubBaseUrl, letpubQuery } from './letpub';
+import { ccfData } from './ccf';
+import { letpubQueryUrl, letpubQuery } from './letpub';
 import Utils from "./utils";
 
 // Harvard style
@@ -134,9 +132,7 @@ function apa_style(sentence) {
  */
 function guessCcf(title) {
     let regexp = new RegExp(title.trim().replace(/\s+/ig, '\\s'), 'i');
-    let res = csvData
-        .filter(row => (row.a + row.name).match(regexp))
-        .map(ccfParser)[0];
+    let res = ccfData.en.filter(row => row.searchKey.match(regexp))[0];
     if (res) {
         res.title += " (CCF Guess)";
     }
@@ -175,8 +171,8 @@ async function generate_info(res, cite_style, cb) {
             info.push({
                 title: "期刊: " + searchWord,
                 description: "跳转Letpub编辑和搜索...",
-                cite: "let-pub",
-                url: LetpubBaseUrl + "index.php?page=journalapp&view=search&searchname=" + encodeURIComponent(searchWord).replace(/%20/g, '+')
+                cite: "letpub",
+                url: letpubQueryUrl(searchWord)
             });
             const result = guessCcf(searchWord);
             if (result) {
@@ -193,7 +189,7 @@ async function generate_info(res, cite_style, cb) {
         }
     } else if (res.conference) {
         const searchWord = res.conference.trim();
-        info.push({ title: "会议: " + searchWord, cite: cite_style });
+        info.push({ title: "会议", description: searchWord, cite: cite_style });
         const result = guessCcf(searchWord);
         if (result) {
             info.push(result);

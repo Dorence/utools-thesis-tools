@@ -1,22 +1,76 @@
 // @ts-check
 const { build, analyzeMetafile } = require("esbuild");
 const { copy } = require('esbuild-plugin-copy');
-const extPkg = require("esbuild-plugin-external-package");
 // @ts-ignore
 const { dsvPlugin } = require("esbuild-plugin-dsv");
-
-const isProd = process.env.NODE_ENV == 'production';
-console.log(isProd ? "[Prodction]" : "[Development]");
-
-function transformCsv(row) {
-    if (row.hasOwnProperty("n")) {
-        row.n = Number(row.n);
-    }
-    return row;
-}
+const fs = require("node:fs");
 
 (async () => {
-    let result = await build({
+    "use strict";
+    const isProd = process.env.NODE_ENV == 'production';
+    console.log(isProd ? "[Prodction]" : "[Development]");
+
+    function transformCsv(row) {
+        if (row.hasOwnProperty("n")) {
+            row.n = Number(row.n);
+        }
+        return row;
+    }
+    /**
+     * Set external packages
+     * @param {{include?: string[], exclude?: string[]}} options
+     * @returns {import("esbuild").Plugin}
+     */
+    function extPkg(options) {
+        const exclude = options?.exclude || []
+        async function setup(build) {
+            const pkg = JSON.parse(await fs.readFileSync("./package.json", { encoding: "utf-8" }));
+            const external = [
+                ...options?.include || [],
+                ...Object.keys(pkg?.dependencies || {}),
+                ...Object.keys(pkg?.devDependencies || {}),
+            ].filter(e => !exclude.includes(e));
+            // console.log("[external]", external);
+            if (build.initialOptions.external) {
+                build.initialOptions.external.concat(external);
+            }
+            else {
+                build.initialOptions.external = external;
+            }
+        }
+        return { name: "external-package", setup };
+    };
+
+    /**
+     * Build result analyze processor
+     * @param {import("esbuild").Metafile} metafile 
+     */
+    async function analyze(metafile) {
+        // console.log(metafile.outputs['dist/preload.js'])
+        for (const file in metafile.outputs) {
+            /** @type {(typeof metafile.outputs)['']['inputs']} */
+            let newInputs = { "node_modules": { bytesInOutput: 0 } };
+            for (const k in metafile.outputs[file].inputs) {
+                const v = metafile.outputs[file].inputs[k];
+
+                if (k.startsWith("node_modules")) {
+                    newInputs["node_modules"].bytesInOutput += v.bytesInOutput;
+                }
+                else if (k.startsWith("dsv")) {
+                    const newPath = k.replace(__dirname, ".").replace(/\\/g, '/')
+                    newInputs[newPath] = v;
+                }
+                else {
+                    newInputs[k] = v;
+                }
+            }
+            metafile.outputs[file].inputs = newInputs;
+        }
+        console.log(await analyzeMetafile(metafile, { color: true }));
+    }
+
+    // run esbuild
+    const result = await build({
         entryPoints: ['preload.js'],
         outdir: 'dist',
         bundle: true,
@@ -26,32 +80,27 @@ function transformCsv(row) {
         platform: 'node',
         target: ['chrome91'],
         metafile: true,
+        alias: {
+            'http-debug': isProd ? './src/debug' : './tests/debug'
+        },
         plugins: [
             copy({
                 assets: [
-                    {
-                        from: './plugin.json',
-                        to: 'plugin.json'
-                    },
-                    {
-                        from: './assets/logo.png',
-                        to: '.'
-                    },
+                    { from: './plugin.json', to: 'plugin.json' },
+                    { from: './assets/logo.png', to: 'logo.png' },
                 ]
             }),
             dsvPlugin({
                 transform(data, extension) {
-                    console.log(extension);
-                    console.log(data.length);
                     if (extension === "CSV") {
                         return data.map(transformCsv);
                     }
                     return data;
                 }
             }),
-            extPkg
+            extPkg({ exclude: ["axios"] }),
         ],
     });
 
-    console.log(await analyzeMetafile(result.metafile));
+    analyze(result.metafile);
 })();
