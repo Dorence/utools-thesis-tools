@@ -11,7 +11,7 @@ function send(path, data = "") {
         baseURL: 'http://localhost:5000/',
         data,
         method: 'post',
-        headers: { 'Content-Type': 'text/plain; charset=utf-8' }
+        headers: { 'Content-Type': 'text/plain; charset=utf-8' },
     });
 }
 
@@ -26,9 +26,10 @@ function tostr(obj, depth = 0) {
     }
     else if (typeof obj === 'string') {
         if (obj.length < 64) {
-            obj = obj.replace(/\n/g, "\\n").replace(/\r/g, "\\r");
+            obj = obj.replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t");
+            return '"' + obj + '"';
         }
-        return '"' + obj + '"';
+        return '`' + obj + '`';
     }
     else if (obj === undefined) {
         return 'undefined';
@@ -42,9 +43,12 @@ function tostr(obj, depth = 0) {
     else if (Array.isArray(obj)) {
         if (depth < 2) {
             const m = obj.map(e => tostr(e, depth + 1));
-            return `[${m.join(',')}]`;
+            return `[${m.join(', ')}]`;
         }
         return JSON.stringify(obj);
+    }
+    else if (obj instanceof Date) {
+        return obj.toISOString();
     }
     return obj.toString();
 }
@@ -84,6 +88,6 @@ const debug = {
         console.log(...args);
         send('info', parseArgs(args));
     }
-}
+};
 
 module.exports = debug;

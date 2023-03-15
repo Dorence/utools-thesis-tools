@@ -1,9 +1,6 @@
 {
     "compilerOptions": {
         "target": "ES6",
-        "lib": [
-            "ES2021.String"
-        ],
         "moduleResolution": "node",
     },
     "exclude": [

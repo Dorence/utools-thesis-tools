@@ -1,7 +1,6 @@
 // @ts-check
-/// <reference path="node_modules/utools-api-types/index.d.ts" />
 
-declare interface CsvDataRow {
+declare interface CsvDataEnRow {
     /** #no */
     n: string,
     /** abbreviation */
@@ -20,11 +19,6 @@ declare interface CsvDataRow {
     tp: string,
 }
 
-declare module "*/ccf-2022.csv" {
-    const content: CsvDataRow[];
-    export default content;
-}
-
 interface CsvDataCnRow {
     /** #no */
     n: string,
@@ -38,9 +32,4 @@ interface CsvDataCnRow {
     lang: "C" | "E" | "CE",
     /** CCF-T1/T2/T3 */
     tier: "T1" | "T2" | "T3"
-}
-
-declare module "*/ccf-2022-cn.csv" {
-    const content: CsvDataCnRow[];
-    export default content;
 }

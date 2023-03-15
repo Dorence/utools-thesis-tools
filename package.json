@@ -16,7 +16,6 @@
         "sql.js": "^1.8.0"
     },
     "devDependencies": {
-        "cli-color": "^2.0.3",
         "esbuild": "0.17.11",
         "esbuild-plugin-copy": "^2.1.0",
         "esbuild-plugin-dsv": "^0.0.2",

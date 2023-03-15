@@ -1,23 +1,23 @@
-# uTools_thesisTools 学术工具集
+# utools-thesis-tools 
 
-一些解决在查看论文中可能产生的诡异需求的工具。
+**学术工具集** 一些解决在查看论文中可能产生的诡异需求的工具。
 
-## Letpub
+## 功能
 
-在Letpub网站查询期刊的中科院分区情况。
+【Letpub】
 
-使用方法：在uTools中使用关键字"letpub"。
+在Letpub网站查询期刊的中科院分区情况。使用方法：
+- 在uTools中输入关键字 `letpub` 或 `lp`。
 
 【CCF查询】
 
 查询期刊/会议在CCF 2022年发布的目录中的分区情况。使用方法：
-
 - 在uTools中使用关键字"ccf"查询期刊/会议在《中国计算机学会推荐国际学术会议和期刊目录（2022年）》的等级。
 - 在uTools中使用关键字"ccfz"或者"ccfc"查询期刊在《计算领域高质量科技期刊分级目录（2022年）》的等级。
 
 参考： https://www.ccf.org.cn/Academic_Evaluation/By_category/
 
-【条目修订】
+【CCF条目修订】
 
 修改了以下条目：
 - HotSec: USENIX Workshop on Hot Topics in Security @ https://dblp.org/db/conf/uss
@@ -42,21 +42,17 @@
 - Algorithmica
 - Cognition
 
-## pdf换行替换
+【PDF换行替换】
 
-从pdf中复制时，常常句子被换行分开了。
+从pdf中复制时，常常句子被换行分开了。这个功能可以替换全半角、换行；在英文的情况下，替换连字符。使用方法：
 
-这个功能可以替换全半角、换行；在英文的情况下，替换连字符。
-
-使用方法：
-
-1. 从pdf正常复制,呼出uTools菜单。
-2. 选择"替换pdf换行"
-3. 正常粘贴
+- 从pdf正常复制，呼出uTools菜单-
+- 选择"替换pdf换行"
+- 正常粘贴
 
 <!-- TODO: 处理uTools插件中来自应用的情况。 -->
 
-## 解析引用格式
+【解析引用格式】
 
 基于正则表达式拆解论文的引用格式。可能不准确，但是在大多数情况下（从谷歌学术中拷贝的引用）都能用。
 
@@ -69,11 +65,11 @@
 3. 如无识别：“未知引用”
 4. 选择内容以复制。
 
-## Zotero-Search
+【Zotero查询】（仅Windows）
 
-连接Zotero数据库查询Zotero中的文献资料。（标题匹配）
+连接Zotero数据库查询Zotero中的文献资料，匹配标题。使用方法：
 
-使用方法：在uTools中使用关键字"zotero"或者"zs"。
+- 在uTools中使用关键字 `zotero` 或 `zs`。
 
 ## 建议
 

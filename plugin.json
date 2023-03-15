@@ -40,7 +40,13 @@
     {
       "code": "zotero_search",
       "explain": "查询Zotero文献",
-      "cmds": ["zotero", "zs", "zotero_search"]
+      "cmds": [
+        "zotero",
+        "zs"
+      ],
+      "platform": [
+        "win32"
+      ]
     },
     {
       "code": "unknown_cite",

@@ -1,9 +1,18 @@
 #!/usr/bin/env node
 // @ts-check
 const http = require('node:http');
-const color = require('cli-color');
 
 const ERROR = 0, WARN = 1, LOG = 2, INFO = 3, UNK = 4;
+/** @ts-ignore @type {{[i:string]:(str:string) => string}} */
+const Style = (function () {
+    ["black", "red", "green", "yellow", "blue", "magenta", "cyan", "white"]
+        .forEach((color, idx) => {
+            const code = 30 + idx;
+            this[color] = /** @param {string} str */
+                str => `\u001b[${code}m${str}\u001b[39m`;
+        })
+    return this;
+})();
 
 function getRequestType(url) {
     switch (url.toLowerCase()) {
@@ -15,13 +24,7 @@ function getRequestType(url) {
     }
 }
 
-const TypePrefix = [
-    color.red("[E]"),
-    color.yellow("[W]"),
-    color.blue("[L]"),
-    color.cyan("[I]"),
-    "..."
-];
+const TypePrefix = [Style.red("[E]"), Style.yellow("[W]"), Style.blue("[L]"), Style.cyan("[I]"), "..."];
 
 // Create an HTTP server
 const server = http.createServer((req, res) => {
@@ -33,7 +36,7 @@ const server = http.createServer((req, res) => {
     req.on('end', () => {
         console.log(TypePrefix[type], result);
     })
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
     res.end('OK');
 });
 

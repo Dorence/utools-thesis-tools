@@ -4,6 +4,7 @@ import csvDataEn from '../assets/ccf-2022.csv'
 import csvDataCn from '../assets/ccf-2022-cn.csv'
 /** @ts-ignore @type {import("../tests/debug")} */
 const debug = require("http-debug");
+// debug.info("> ccf.js");
 
 const topicMap = {
     CA: "计算机体系结构/并行与分布计算/存储系统",
@@ -29,7 +30,7 @@ const langMap = {
     CE: "中英文",
 };
 
-/** @param {CsvDataRow} row */
+/** @param {CsvDataEnRow} row */
 function ccfEnParser(row) {
     const publisher = row.pub.length <= 12 ? row.pub : (row.pub.substring(0, 12) + '...');
     const url = row.url.replace('$dblp', 'https://dblp.org/db');
@@ -53,7 +54,9 @@ function ccfCnParser(row) {
 }
 
 export const ccfData = {
+    // @ts-ignore
     cn: csvDataCn.map(ccfCnParser),
+    // @ts-ignore
     en: csvDataEn.map(ccfEnParser),
 };
 

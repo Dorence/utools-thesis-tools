@@ -4,6 +4,7 @@ const { copy } = require('esbuild-plugin-copy');
 // @ts-ignore
 const { dsvPlugin } = require("esbuild-plugin-dsv");
 const fs = require("fs");
+const path = require("path");
 
 (async () => {
     "use strict";
@@ -16,6 +17,7 @@ const fs = require("fs");
         }
         return row;
     }
+
     /**
      * Set external packages
      * @param {{include?: string[], exclude?: string[]}} options
@@ -45,7 +47,11 @@ const fs = require("fs");
      * Build result analyze processor
      * @param {import("esbuild").Metafile} metafile 
      */
-    async function analyze(metafile) {
+    async function analyze(metafile, verbose = false) {
+        if (verbose) {
+            console.log(await analyzeMetafile(metafile, { color: true }));
+            return;
+        }
         // console.log(metafile.outputs['dist/preload.js'])
         for (const file in metafile.outputs) {
             /** @type {(typeof metafile.outputs)['']['inputs']} */
@@ -79,11 +85,20 @@ const fs = require("fs");
         minify: isProd,
         platform: 'node',
         target: ['chrome91'],
+        legalComments: 'none',
         metafile: true,
         alias: {
-            'http-debug': isProd ? './src/debug' : './tests/debug'
+            'http-debug': isProd ? './src/debug' : './tests/debug',
         },
         plugins: [
+            {
+                name: "replace-mime-db", // redirect `mime-db` to `mimedb.js`
+                setup(build) {
+                    build.onResolve({ filter: /^mime-db$/ }, args => {
+                        return { path: path.join(__dirname, "src/mimedb.js") };
+                    });
+                },
+            },
             copy({
                 assets: [
                     { from: 'plugin.json', to: 'plugin.json' },

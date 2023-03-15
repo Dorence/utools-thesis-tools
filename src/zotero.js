@@ -4,6 +4,7 @@ const path = require('path');
 const initSqlJs = require("sql.js");
 /** @ts-ignore @type {import("../tests/debug")} */
 const debug = require("http-debug");
+// debug.info("> zotero.js");
 
 /** @type {import("sql.js").Statement} */
 let stmt;
