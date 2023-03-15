@@ -52,8 +52,18 @@ function tostr(obj, depth = 0) {
 /** @param {any[]} args */
 function parseArgs(args) {
     let str = '';
+    let nextJson = false;
     for (const i of args) {
-        str += ' ' + tostr(i);
+        if (nextJson) {
+            str += ' ' + JSON.stringify(i);
+            nextJson = false;
+        }
+        else if ("@J" === i) {
+            nextJson = true;
+        }
+        else {
+            str += ' ' + tostr(i);
+        }
     }
     return str.substring(1);
 }

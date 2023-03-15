@@ -3,7 +3,7 @@ const { build, analyzeMetafile } = require("esbuild");
 const { copy } = require('esbuild-plugin-copy');
 // @ts-ignore
 const { dsvPlugin } = require("esbuild-plugin-dsv");
-const fs = require("node:fs");
+const fs = require("fs");
 
 (async () => {
     "use strict";
@@ -86,8 +86,9 @@ const fs = require("node:fs");
         plugins: [
             copy({
                 assets: [
-                    { from: './plugin.json', to: 'plugin.json' },
-                    { from: './assets/logo.png', to: 'logo.png' },
+                    { from: 'plugin.json', to: 'plugin.json' },
+                    { from: 'assets/logo.png', to: 'logo.png' },
+                    { from: 'node_modules/sql.js/dist/sql-wasm.wasm', to: 'sql-wasm.wasm' },
                 ]
             }),
             dsvPlugin({
@@ -98,7 +99,7 @@ const fs = require("node:fs");
                     return data;
                 }
             }),
-            extPkg({ exclude: ["axios"] }),
+            // extPkg(),
         ],
     });
 

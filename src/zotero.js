@@ -1,89 +1,84 @@
 // @ts-check
-const path = require('path');
 const fs = require('fs');
-const sqlite3 = require('sqlite3');
-let db;
+const path = require('path');
+const initSqlJs = require("sql.js");
+/** @ts-ignore @type {import("../tests/debug")} */
+const debug = require("http-debug");
+
+/** @type {import("sql.js").Statement} */
+let stmt;
+
+/**
+ * search title in zotero
+ * @param {string} searchWord 
+ * @param {Function} cb 
+ */
+function query(searchWord, cb) {
+    stmt.bind({ $word: `%${searchWord || ''}%` });
+    let res = [];
+    while (stmt.step()) {
+        const row = stmt.getAsObject();
+        const url = "zotero://select/items/" + row.libraryID + "_" + row.key;
+        res.push({ title: row.value, description: url, url: url })
+    }
+    cb(res);
+}
 
 export const zotero = {
     enter(action, cb) {
-        // default zotero db location: "%HOMEPATH%\\Zotero\\zotero.sqlite"
-        // let origin_db_path = path.join(os.homedir(), 'Zotero', 'zotero.sqlite');
-        let profile_dir = path.join(utools.getPath('appData'), 'Zotero', 'Zotero', 'Profiles');
-        // 因为没有解析profile.ini，所以这里只能假设我们只有一个profile
-        let dirs = fs.readdirSync(profile_dir, { withFileTypes: true }).filter(file => file.isDirectory() && file.name.endsWith('default')).map(dirent => dirent.name);
-        // assert len(dirs) == 1
-        console.log(dirs[0]);
-        let pref_path = path.join(profile_dir, dirs[0], 'prefs.js');
-        let prefs = fs.readFileSync(pref_path, 'utf8');
-        let pref_regex = /user_pref\("extensions.zotero.dataDir",\s?"(.*)"\);/;
-        let match = pref_regex.exec(prefs);
+        debug.log("zotero:enter");
+        const profileDir = path.join(utools.getPath('appData'), 'Zotero', 'Zotero', 'Profiles');
+        // assume only 1 profile exists
+        const dirs = fs.readdirSync(profileDir, { withFileTypes: true })
+            .filter(file => file.isDirectory() && file.name.endsWith('default'))
+            .map(dirent => dirent.name);
+        debug.log("dirs", dirs);
+        if (dirs.length < 1) {
+            cb([{ title: 'Zotero profile dir not found' }]);
+            return;
+        }
+
+        const prefPath = path.join(profileDir, dirs[0], 'prefs.js');
+        const prefs = fs.readFileSync(prefPath, 'utf8');
+        const match = /user_pref\("extensions.zotero.dataDir",\s?"(.*)"\);/.exec(prefs);
         if (!match) {
             cb([{ title: 'extensions.zotero.dataDir not found' }]);
             return;
         }
-        console.log(match[1]);
-        let origin_db_path = path.join(match[1], 'zotero.sqlite');
-        console.log(origin_db_path);
 
-        if (!fs.existsSync(origin_db_path)) {
-            // 扔报错。
-            console.log('zotero.sqlite not found');
+        let dbPath = path.join(match[1], 'zotero.sqlite');
+        debug.log("dbPath", dbPath);
+        if (!fs.existsSync(dbPath)) {
             cb([{
                 title: 'zotero.sqlite not found',
-                description: '未在你的设置中找到zotero.sqlite的位置，这可能是个bug，请联系插件作者。'
+                description: '未找到 zotero.sqlite 的位置, 请联系插件作者'
             }]);
             return;
         }
 
-        let db_path = origin_db_path + "_backup";
-        fs.copyFile(origin_db_path, db_path, (err) => {
-            console.log(db_path);
-            if (err) throw err;
-            db = new sqlite3.Database(db_path, sqlite3.OPEN_READONLY, function (err) {
-                if (err) throw err;
-                console.log('Connected to the SQLite database');
-            });
-            db.all("SELECT itemDataValues.value, items.key as itemKey, items.libraryID FROM items" +
-                " INNER JOIN itemData ON items.itemID = itemData.itemID AND itemData.fieldID=1" +
-                " INNER JOIN itemDataValues ON itemData.valueID=itemDataValues.valueID",
-                function (err, rows) {
-                    if (err) throw err;
-                    let res = rows.map(row => {
-                        // construct url
-                        let url = "zotero://select/items/" + row.libraryID + "_" + row.itemKey;
-                        return {
-                            title: row.value,
-                            description: url,
-                            url: url
-                        }
-                    });
-                    cb(res);
-                });
-        });
+        const buf = fs.readFileSync(dbPath);
+        debug.info('file', dbPath, buf.length, buf.subarray(0, 20).toString())
+        initSqlJs().then(SQL => {
+            // load database from buffer
+            const db = new SQL.Database(buf);
+            stmt = db.prepare(
+                "SELECT itemDataValues.value, items.key, items.libraryID FROM items " +
+                "INNER JOIN itemData ON items.itemID = itemData.itemID AND itemData.fieldID=1 " +
+                "INNER JOIN itemDataValues ON itemData.valueID=itemDataValues.valueID " +
+                "WHERE itemDataValues.value like $word"
+            );
+            query('', cb);
+        }).catch(debug.warn)
     },
     search(action, searchWord, cb) {
-        // search title in zotero
-        db.all("SELECT itemDataValues.value, items.key as itemKey, items.libraryID FROM items" +
-            " INNER JOIN itemData ON items.itemID = itemData.itemID AND itemData.fieldID=1" +
-            " INNER JOIN itemDataValues ON itemData.valueID=itemDataValues.valueID" +
-            " WHERE itemDataValues.value like '%" + searchWord + "%'",
-            function (err, rows) {
-                if (err) throw err;
-                let res = rows.map(row => {
-                    // construct url
-                    let url = "zotero://select/items/" + row.libraryID + "_" + row.itemKey;
-                    return {
-                        title: row.value,
-                        description: url,
-                        url: url
-                    }
-                });
-                cb(res);
-            });
+        debug.log("zotero:search", searchWord);
+        query(searchWord, cb);
     },
     select(action, item, cb) {
-        window.utools.hideMainWindow()
-        window.utools.shellOpenExternal(item.url);
+        window.utools.hideMainWindow();
+        if (item.url) {
+            window.utools.shellOpenExternal(item.url);
+        }
         window.utools.outPlugin();
     }
 }
