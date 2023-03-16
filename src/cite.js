@@ -301,5 +301,5 @@ export const citeUnknown = {
         } else {
             citeSelectCallback(item);
         }
-    }
+    },
 };

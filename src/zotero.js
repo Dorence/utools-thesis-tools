@@ -1,4 +1,5 @@
 // @ts-check
+/// <reference path="extra.d.ts" />
 const fs = require("fs");
 const path = require("path");
 const initSqlJs = require("sql.js");
@@ -23,41 +24,57 @@ function query(searchWord, cb) {
     cb(res);
 }
 
+function getProfileDir() {
+    if (window.utools.isWindows()) {
+        return path.join(window.utools.getPath("appData"), "Zotero", "Zotero", "Profiles");
+    }
+    else if (window.utools.isLinux()) {
+        return path.join(window.utools.getPath("home"), ".zotero", "zotero");
+    }
+    return null;
+}
+
 /** @type {Preload.ListArgs} */
 export const zotero = {
     enter(action, cb) {
         console.log("zotero:enter");
-        const profileDir = path.join(utools.getPath('appData'), 'Zotero', 'Zotero', 'Profiles');
+
+        const profileDir = getProfileDir();
+        if (profileDir === null) {
+            cb([{ title: "未找到 Zotero profile 的位置" }]);
+            return;
+        }
+
         // assume only 1 profile exists
         const dirs = fs.readdirSync(profileDir, { withFileTypes: true })
-            .filter(file => file.isDirectory() && file.name.endsWith('default'))
+            .filter(dirent => dirent.isDirectory() && dirent.name.endsWith("default"))
             .map(dirent => dirent.name);
-        console.log("dirs", dirs);
+        console.log("zotero:dir", profileDir, dirs);
         if (dirs.length < 1) {
-            cb([{ title: 'Zotero profile dir not found' }]);
+            cb([{ title: "未找到 personal profile 的位置" }]);
             return;
         }
 
-        const prefPath = path.join(profileDir, dirs[0], 'prefs.js');
-        const prefs = fs.readFileSync(prefPath, 'utf8');
+        const prefPath = path.join(profileDir, dirs[0], "prefs.js");
+        if (!fs.existsSync(prefPath)) {
+            cb([{ title: "未找到 prefs.js 的位置" }]);
+            return;
+        }
+        const prefs = fs.readFileSync(prefPath, "utf8");
         const match = /user_pref\("extensions.zotero.dataDir",\s?"(.*)"\);/.exec(prefs);
         if (!match) {
-            cb([{ title: 'extensions.zotero.dataDir not found' }]);
+            cb([{ title: "未找到 extensions.zotero.dataDir" }]);
             return;
         }
 
-        let dbPath = path.join(match[1], 'zotero.sqlite');
-        console.log("dbPath", dbPath);
+        const dbPath = path.join(match[1], "zotero.sqlite");
         if (!fs.existsSync(dbPath)) {
-            cb([{
-                title: 'zotero.sqlite not found',
-                description: '未找到 zotero.sqlite 的位置, 请联系插件作者'
-            }]);
+            cb([{ title: "未找到 zotero.sqlite 的位置" }]);
             return;
         }
 
         const buf = fs.readFileSync(dbPath);
-        console.info("file", dbPath, buf.length, buf.subarray(0, 20).toString())
+        console.info("zotero:sqlite", dbPath, buf.length);
         initSqlJs().then(SQL => {
             // load database from buffer
             const db = new SQL.Database(buf);
@@ -67,7 +84,7 @@ export const zotero = {
                 "INNER JOIN itemDataValues ON itemData.valueID=itemDataValues.valueID " +
                 "WHERE itemDataValues.value like $word"
             );
-            query('', cb);
+            query("", cb);
         }).catch(err => {
             console.warn("initSqlJs", err);
         });
@@ -82,5 +99,5 @@ export const zotero = {
             window.utools.shellOpenExternal(item.url);
         }
         window.utools.outPlugin();
-    }
+    },
 };

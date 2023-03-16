@@ -1,4 +1,5 @@
 // @ts-check
+/// <reference path="extra.d.ts" />
 // console.info("> pdf.js");
 
 /**
@@ -39,5 +40,5 @@ export const pdf = {
         console.log("pdf:enter", action.payload.length, res.length);
         window.utools.copyText(res);
         window.utools.outPlugin();
-    }
+    },
 };

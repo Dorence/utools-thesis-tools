@@ -1,4 +1,5 @@
 // @ts-check
+/// <reference path="extra.d.ts" />
 import axios from "axios";
 // console.info("> letpub.js");
 
@@ -142,5 +143,5 @@ export const letpub = {
         }
         window.utools.shellOpenExternal(item.url);
         window.utools.outPlugin();
-    }
+    },
 };
