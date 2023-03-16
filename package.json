@@ -4,6 +4,8 @@
     "description": "一些学术小工具",
     "scripts": {
         "build": "node esbuild.js",
+        "build:dev": "env NODE_ENV=development node esbuild.js",
+        "build:drop": "env NODE_ENV=dropconsole node esbuild.js",
         "build:prod": "env NODE_ENV=production node esbuild.js"
     },
     "author": "ciaranchen",

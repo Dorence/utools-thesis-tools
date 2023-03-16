@@ -13,4 +13,4 @@ module.exports = {
         "compressible": true,
         "extensions": ["txt", "text", "conf", "def", "list", "log", "in", "ini"]
     },
-}
+};

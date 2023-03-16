@@ -1,10 +1,8 @@
 // @ts-check
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 const initSqlJs = require("sql.js");
-/** @ts-ignore @type {import("../tests/debug")} */
-const debug = require("http-debug");
-// debug.info("> zotero.js");
+// console.info("> zotero.js");
 
 /** @type {import("sql.js").Statement} */
 let stmt;
@@ -15,25 +13,26 @@ let stmt;
  * @param {Function} cb 
  */
 function query(searchWord, cb) {
-    stmt.bind({ $word: `%${searchWord || ''}%` });
+    stmt.bind({ $word: `%${searchWord || ""}%` });
     let res = [];
     while (stmt.step()) {
         const row = stmt.getAsObject();
-        const url = "zotero://select/items/" + row.libraryID + "_" + row.key;
-        res.push({ title: row.value, description: url, url: url })
+        const url = `zotero://select/items/${row.libraryID}_${row.key}`;
+        res.push({ title: row.value, description: url, url: url });
     }
     cb(res);
 }
 
+/** @type {Preload.ListArgs} */
 export const zotero = {
     enter(action, cb) {
-        debug.log("zotero:enter");
+        console.log("zotero:enter");
         const profileDir = path.join(utools.getPath('appData'), 'Zotero', 'Zotero', 'Profiles');
         // assume only 1 profile exists
         const dirs = fs.readdirSync(profileDir, { withFileTypes: true })
             .filter(file => file.isDirectory() && file.name.endsWith('default'))
             .map(dirent => dirent.name);
-        debug.log("dirs", dirs);
+        console.log("dirs", dirs);
         if (dirs.length < 1) {
             cb([{ title: 'Zotero profile dir not found' }]);
             return;
@@ -48,7 +47,7 @@ export const zotero = {
         }
 
         let dbPath = path.join(match[1], 'zotero.sqlite');
-        debug.log("dbPath", dbPath);
+        console.log("dbPath", dbPath);
         if (!fs.existsSync(dbPath)) {
             cb([{
                 title: 'zotero.sqlite not found',
@@ -58,7 +57,7 @@ export const zotero = {
         }
 
         const buf = fs.readFileSync(dbPath);
-        debug.info('file', dbPath, buf.length, buf.subarray(0, 20).toString())
+        console.info("file", dbPath, buf.length, buf.subarray(0, 20).toString())
         initSqlJs().then(SQL => {
             // load database from buffer
             const db = new SQL.Database(buf);
@@ -69,10 +68,12 @@ export const zotero = {
                 "WHERE itemDataValues.value like $word"
             );
             query('', cb);
-        }).catch(debug.warn)
+        }).catch(err => {
+            console.warn("initSqlJs", err);
+        });
     },
     search(action, searchWord, cb) {
-        debug.log("zotero:search", searchWord);
+        console.log("zotero:search", searchWord);
         query(searchWord, cb);
     },
     select(action, item, cb) {
@@ -82,4 +83,4 @@ export const zotero = {
         }
         window.utools.outPlugin();
     }
-}
+};

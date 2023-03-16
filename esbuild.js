@@ -1,15 +1,23 @@
 // @ts-check
 const { build, analyzeMetafile } = require("esbuild");
-const { copy } = require('esbuild-plugin-copy');
+const { copy } = require("esbuild-plugin-copy");
 // @ts-ignore
 const { dsvPlugin } = require("esbuild-plugin-dsv");
 const fs = require("fs");
 const path = require("path");
 
+const ModeMap = {
+    /** @type {0} */ development: 0,
+    /** @type {1} */ dropconsole: 1,
+    /** @type {2} */ production: 2,
+}
+
+/** @type {ModeMap[keyof ModeMap]} */
+const Mode = ModeMap[process.env.NODE_ENV] || 0;
+
 (async () => {
     "use strict";
-    const isProd = process.env.NODE_ENV == 'production';
-    console.log(isProd ? "[Prodction]" : "[Development]");
+    console.log(">", Object.keys(ModeMap)[Mode]);
 
     function transformCsv(row) {
         if (row.hasOwnProperty("n")) {
@@ -32,7 +40,7 @@ const path = require("path");
                 ...Object.keys(pkg?.dependencies || {}),
                 ...Object.keys(pkg?.devDependencies || {}),
             ].filter(e => !exclude.includes(e));
-            // console.log("[external]", external);
+            console.log("[external]", external);
             if (build.initialOptions.external) {
                 build.initialOptions.external.concat(external);
             }
@@ -52,13 +60,11 @@ const path = require("path");
             console.log(await analyzeMetafile(metafile, { color: true }));
             return;
         }
-        // console.log(metafile.outputs['dist/preload.js'])
         for (const file in metafile.outputs) {
             /** @type {(typeof metafile.outputs)['']['inputs']} */
             let newInputs = { "node_modules": { bytesInOutput: 0 } };
             for (const k in metafile.outputs[file].inputs) {
                 const v = metafile.outputs[file].inputs[k];
-
                 if (k.startsWith("node_modules")) {
                     newInputs["node_modules"].bytesInOutput += v.bytesInOutput;
                 }
@@ -77,19 +83,18 @@ const path = require("path");
 
     // run esbuild
     const result = await build({
-        entryPoints: ['preload.js'],
-        outdir: 'dist',
+        entryPoints: ["preload.js"],
+        outdir: "dist",
         bundle: true,
-        charset: 'utf8',
-        format: 'cjs',
-        minify: isProd,
-        platform: 'node',
-        target: ['chrome91'],
-        legalComments: 'none',
+        charset: "utf8",
+        drop: Mode >= 1 ? ["console"] : [],
+        format: "cjs",
+        inject: Mode <= 0 ? ["src/debug-shim.js"] : [],
+        legalComments: "none",
         metafile: true,
-        alias: {
-            'http-debug': isProd ? './src/debug' : './tests/debug',
-        },
+        minify: Mode >= 2,
+        platform: "node",
+        target: ["chrome91"],
         plugins: [
             {
                 name: "replace-mime-db", // redirect `mime-db` to `mimedb.js`

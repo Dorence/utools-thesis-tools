@@ -35,7 +35,21 @@
           "match": "/.*\\r\\n.*/i",
           "minLength": 20
         }
-      ]
+      ],
+      "platform": ["win32"]
+    },
+    {
+      "code": "pdf_replace_linux",
+      "explain": "替换pdf的换行",
+      "cmds": [
+        {
+          "type": "regex",
+          "label": "替换pdf换行",
+          "match": "/.*\\n.*/i",
+          "minLength": 20
+        }
+      ],
+      "platform": ["linux"]
     },
     {
       "code": "zotero_search",

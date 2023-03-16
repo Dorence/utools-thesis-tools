@@ -13,4 +13,4 @@ function replaceSeq(str, rules) {
 }
 
 const Utils = { replaceSeq };
-export default Utils;
+export default Utils

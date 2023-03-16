@@ -1,7 +1,8 @@
 // @ts-check
-import { ccfData } from './ccf';
-import { letpubQueryUrl, letpubQuery } from './letpub';
+import { ccfData } from "./ccf";
+import { letpubQueryUrl, letpubQuery } from "./letpub";
 import Utils from "./utils";
+// console.info("> cite.js");
 
 // Harvard style
 function harvard_style(sentence) {
@@ -131,15 +132,20 @@ function apa_style(sentence) {
  * @returns {{title:string, description: string, url: string} | undefined}
  */
 function guessCcf(title) {
-    let regexp = new RegExp(title.trim().replace(/\s+/ig, '\\s'), 'i');
+    const regexp = new RegExp(title.trim().replace(/\s+/ig, '\\s'), 'i');
     let res = ccfData.en.filter(row => row.searchKey.match(regexp))[0];
+    if (res) {
+        res.title += " (CCF Guess)";
+        return res;
+    }
+    res = ccfData.cn.filter(row => row.searchKey.match(regexp))[0];
     if (res) {
         res.title += " (CCF Guess)";
     }
     return res;
 }
 
-async function generate_info(res, cite_style, cb) {
+async function generateInfo(res, cite_style, cb) {
     console.log(res);
     const title = res.title.trim();
     /** @type {{title: string, [index: string]: any}[]} */
@@ -215,8 +221,7 @@ function citeSelectCallback(item) {
     window.utools.outPlugin();
 }
 
-
-
+/** citing style map */
 export const CiteStyles = {
     "APA": apa_style,
     "GB/T7714": gbt_style,
@@ -227,30 +232,42 @@ export const CiteStyles = {
 export class CiteStyled {
     /** @param {keyof CiteStyles} style */
     constructor(style) {
-        /** @type {string} */
+        console.info("CiteStyled:ctor", style);
+        /** @type {keyof CiteStyles} */
         this.style = style;
     }
+    /** 
+     * @param {Preload.Action} action
+     * @param {Preload.SetListCb} cb
+     */
     enter(action, cb) {
-        let text = action.payload;
-        let res = CiteStyles[this.style](text);
-        generate_info(res, this.style, cb);
+        /** @type {string} */
+        const text = action.payload;
+        console.log("cite:enter", this.style, text);
+        const res = CiteStyles[this.style](text);
+        generateInfo(res, this.style, cb);
     }
+    /**
+     * @param {Preload.Action} action 
+     * @param {Preload.Item} item 
+     * @param {Preload.SetListCb} cb 
+     */
     select(action, item, cb) {
         citeSelectCallback(item);
     }
 }
 
+/** @type {Preload.ListArgs} */
 export const citeUnknown = {
     enter(action, cb) {
-        /** @type{string} */
         const text = Utils.replaceSeq(action.payload, [
             [/[．。]/g, '.'],
             [/，/g, ','],
             [/［/g, '['],
             [/］/g, ']'],
             [/^[\(\[]\d+[\(\]]/, ''],
-        ])
-        // console.log(text);
+        ]);
+        console.log("citeUnk:enter", text);
         let infos = [];
         for (const name in CiteStyles) {
             const res = CiteStyles[name](text);
@@ -280,9 +297,9 @@ export const citeUnknown = {
     },
     select(action, item, cb) {
         if (item.cite === "unknown") {
-            generate_info(item.res, item.cite, cb);
+            generateInfo(item.res, item.cite, cb);
         } else {
             citeSelectCallback(item);
         }
     }
-}
+};
