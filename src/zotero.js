@@ -24,12 +24,16 @@ function query(searchWord, cb) {
     cb(res);
 }
 
+/** @see https://www.zotero.org/support/kb/profile_directory */
 function getProfileDir() {
     if (window.utools.isWindows()) {
         return path.join(window.utools.getPath("appData"), "Zotero", "Zotero", "Profiles");
     }
     else if (window.utools.isLinux()) {
         return path.join(window.utools.getPath("home"), ".zotero", "zotero");
+    }
+    else if (window.utools.isMacOS()) {
+        return path.join(window.utools.getPath("appData"), "Zotero", "Profiles");
     }
     return null;
 }

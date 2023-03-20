@@ -11,10 +11,10 @@ declare interface CsvDataEnRow {
     pub: string
     /**  URL */
     url: string
-    /** CCF-A/B/C */
-    tier: "A" | "B" | "C"
-    /** journal / conference */
-    type: "Jrn" | "Conf"
+    /** tier, CCF-A/B/C */
+    i: 0 | 1 | 2
+    /** 0=conference 1=journal */
+    t: 0 | 1
     /** topics */
     tp: string
 }
@@ -29,10 +29,10 @@ declare interface CsvDataCnRow {
     c: string
     /** publisher */
     pub: string
-    /** language: chinese or english */
-    lang: "C" | "E" | "CE"
-    /** CCF-T1/T2/T3 */
-    tier: "T1" | "T2" | "T3"
+    /** language, 0=chinese 1=english 2=cn+en */
+    l: 0 | 1 | 2
+    /** tier, CCF-T1/T2/T3 */
+    i: 1 | 2 | 3
 }
 
 declare interface CcfItem {

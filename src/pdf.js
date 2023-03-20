@@ -8,7 +8,7 @@
  * @returns {string}
  */
 function dbc2sbc(str) {
-    let result = '';
+    let result = "";
     for (let i = 0; i < str.length; i++) {
         const charCode = str.charCodeAt(i);
         if ((charCode >= 65296 && charCode <= 65305) || // 0~9
@@ -33,9 +33,9 @@ export const pdf = {
         const isEnglish = (alphabets ? alphabets.length : 0) > (text.length / 2); // is English or not?
         let res;
         if (isEnglish) { // English mode
-            res = text.replace(/\r?\n/g, ' ').replace(/\- /g, '');
+            res = text.replace(/\r?\n/g, " ").replace(/\- /g, "");
         } else { // Chinese mode
-            res = text.replace(/\r?\n/g, '');
+            res = text.replace(/\r?\n/g, "");
         }
         console.log("pdf:enter", action.payload.length, res.length);
         window.utools.copyText(res);

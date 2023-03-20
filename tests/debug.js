@@ -27,7 +27,7 @@ function tostr(obj, depth = 0) {
     else if (typeof obj === "string") {
         if (obj.length < 64) {
             obj = obj.replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t");
-            return '"' + obj + '"';
+            return `"${obj}"`;
         }
         return "`" + obj + "`";
     }
@@ -51,12 +51,12 @@ function tostr(obj, depth = 0) {
         return obj.toISOString();
     }
     else if (Buffer.isBuffer(obj)) {
-        const n = "0123456789abcdef";
-        let str = '<Buffer';
+        const N = "0123456789abcdef";
+        let str = "<Buffer";
         for (const v of obj) {
-            str += ' ' + n[v / 16 >> 0] + n[v % 16];
+            str += " " + N[v / 16 >> 0] + N[v % 16];
         }
-        return str + '>';
+        return str + ">";
     }
     return obj.toString();
 }
@@ -82,17 +82,13 @@ function parseArgs(args) {
 
 const debug = {
     /** @param {...any} args */
-    log(...args) {
-        send("log", parseArgs(args));
-    },
+    error(...args) { send("error", parseArgs(args)); },
     /** @param {...any} args */
-    warn(...args) {
-        send("warn", parseArgs(args));
-    },
+    info(...args) { send("info", parseArgs(args)); },
     /** @param {...any} args */
-    info(...args) {
-        send("info", parseArgs(args));
-    }
+    log(...args) { send("log", parseArgs(args)); },
+    /** @param {...any} args */
+    warn(...args) { send("warn", parseArgs(args)); },
 };
 
 module.exports = debug;

@@ -1,6 +1,6 @@
 // @ts-check
 /// <reference path="extra.d.ts" />
-import axios from "axios";
+import axios from "axios"
 // console.info("> letpub.js");
 
 export const LetpubBaseUrl = "https://www.letpub.com.cn/";
@@ -20,7 +20,7 @@ function child(root, ...args) {
         if (null === c || undefined === c) {
             return "";
         }
-        if (c instanceof Element && typeof k === 'number') {
+        if (c instanceof Element && typeof k === "number") {
             // console.info("children", k, c.children[k])
             /** @ts-ignore */
             c = c.children[k];
@@ -106,7 +106,7 @@ function letpubSearch(searchWord, cb) {
 }
 
 export function letpubQueryUrl(searchWord) {
-    return LetpubBaseUrl + "index.php?page=journalapp&view=search&searchname=" + encodeURIComponent(searchWord).replace(/%20/g, '+');
+    return LetpubBaseUrl + "index.php?page=journalapp&view=search&searchname=" + encodeURIComponent(searchWord).replace(/%20/g, "+");
 }
 
 /**

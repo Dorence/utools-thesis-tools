@@ -3,8 +3,8 @@
 const debug = require('./debug')
 
 /**
- * @param {keyof debug} level 
- * @param  {...any} args 
+ * @param {keyof debug} level
+ * @param  {...any} args
  */
 function T(level, ...args) {
     console[level](...args);
