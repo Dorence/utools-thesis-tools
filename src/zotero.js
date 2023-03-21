@@ -3,6 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 const initSqlJs = require("sql.js");
+const utools = window.utools;
 // console.info("> zotero.js");
 
 /** @type {import("sql.js").Statement} */
@@ -10,30 +11,30 @@ let stmt;
 
 /**
  * search title in zotero
- * @param {string} searchWord 
- * @param {Function} cb 
+ * @param {Preload.SetListCb} cb 
+ * @param {string} searchWord searching title
  */
-function query(searchWord, cb) {
-    stmt.bind({ $word: `%${searchWord || ""}%` });
+function query(cb, searchWord = "") {
+    stmt.bind({ $word: `%${searchWord}%` });
     let res = [];
     while (stmt.step()) {
         const row = stmt.getAsObject();
         const url = `zotero://select/items/${row.libraryID}_${row.key}`;
-        res.push({ title: row.value, description: url, url: url });
+        res.push({ title: `${row.value}`, description: url, url: url });
     }
     cb(res);
 }
 
 /** @see https://www.zotero.org/support/kb/profile_directory */
 function getProfileDir() {
-    if (window.utools.isWindows()) {
-        return path.join(window.utools.getPath("appData"), "Zotero", "Zotero", "Profiles");
+    if (utools.isWindows()) {
+        return path.join(utools.getPath("appData"), "Zotero\\Zotero\\Profiles");
     }
-    else if (window.utools.isLinux()) {
-        return path.join(window.utools.getPath("home"), ".zotero", "zotero");
+    else if (utools.isLinux()) {
+        return path.join(utools.getPath("home"), ".zotero/zotero");
     }
-    else if (window.utools.isMacOS()) {
-        return path.join(window.utools.getPath("appData"), "Zotero", "Profiles");
+    else if (utools.isMacOS()) {
+        return path.join(utools.getPath("appData"), "Zotero/Profiles");
     }
     return null;
 }
@@ -45,7 +46,7 @@ export const zotero = {
 
         const profileDir = getProfileDir();
         if (profileDir === null) {
-            cb([{ title: "未找到 Zotero profile 的位置" }]);
+            cb([{ title: "未找到 Zotero Profiles" }]);
             return;
         }
 
@@ -55,13 +56,13 @@ export const zotero = {
             .map(dirent => dirent.name);
         console.log("zotero:dir", profileDir, dirs);
         if (dirs.length < 1) {
-            cb([{ title: "未找到 personal profile 的位置" }]);
+            cb([{ title: "未找到 prefs.js 的目录" }]);
             return;
         }
 
         const prefPath = path.join(profileDir, dirs[0], "prefs.js");
         if (!fs.existsSync(prefPath)) {
-            cb([{ title: "未找到 prefs.js 的位置" }]);
+            cb([{ title: "未找到 prefs.js" }]);
             return;
         }
         const prefs = fs.readFileSync(prefPath, "utf8");
@@ -73,7 +74,7 @@ export const zotero = {
 
         const dbPath = path.join(match[1], "zotero.sqlite");
         if (!fs.existsSync(dbPath)) {
-            cb([{ title: "未找到 zotero.sqlite 的位置" }]);
+            cb([{ title: "未找到 zotero.sqlite" }]);
             return;
         }
 
@@ -88,20 +89,20 @@ export const zotero = {
                 "INNER JOIN itemDataValues ON itemData.valueID=itemDataValues.valueID " +
                 "WHERE itemDataValues.value like $word"
             );
-            query("", cb);
+            query(cb);
         }).catch(err => {
             console.warn("initSqlJs", err);
         });
     },
     search(action, searchWord, cb) {
         console.log("zotero:search", searchWord);
-        query(searchWord, cb);
+        query(cb, searchWord);
     },
     select(action, item, cb) {
-        window.utools.hideMainWindow();
+        utools.hideMainWindow();
         if (item.url) {
-            window.utools.shellOpenExternal(item.url);
+            utools.shellOpenExternal(item.url);
         }
-        window.utools.outPlugin();
+        utools.outPlugin();
     },
 };

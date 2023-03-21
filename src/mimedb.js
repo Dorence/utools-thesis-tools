@@ -1,26 +1,24 @@
 module.exports = {
     "application/json": {
-        "source": "iana",
         "charset": "UTF-8",
         "compressible": true,
-        "extensions": ["json", "map"]
+        "extensions": ["json"]
     },
     "application/octet-stream": {
-        "source": "iana",
         "compressible": false,
-        "extensions": ["bin", "exe"]
+        "extensions": ["bin"]
     },
     "application/x-www-form-urlencoded": {
-        "source": "iana",
         "compressible": true
     },
+    "multipart/form-data": {
+        "compressible": false
+    },
     "text/html": {
-        "source": "iana",
         "compressible": true,
         "extensions": ["html", "htm", "shtml"]
     },
     "text/plain": {
-        "source": "iana",
         "compressible": true,
         "extensions": ["txt", "text", "log", "ini"]
     },
