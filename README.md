@@ -2,6 +2,8 @@
 
 **学术工具集** 一些解决在查看论文中可能产生的诡异需求的 [uTools](u.tools) 工具。
 
+感谢 [@Dorence](https://github.com/Dorence/) 对此项目的代码进行了重构。
+
 ## Features 功能
 
 【Letpub】
@@ -39,7 +41,7 @@
 
 您的建议非常宝贵。如果您有任何新功能或者改进的建议，可以在uTools的评论区留言，我会尽力回复。
 
-Open source at [ciaranchen.coding.net](https://ciaranchen.coding.net/public/dotfiles/utools_thesis_tools/git/files) & [github.com/dorence](https://github.com/Dorence/utools-thesis-tools).
+Open source at [github.com/ciaranchen](https://github.com/ciaranchen/utools-thesis-tools) & [github.com/dorence](https://github.com/Dorence/utools-thesis-tools).
 
 ## More 说明
 
@@ -65,6 +67,7 @@ Open source at [ciaranchen.coding.net](https://ciaranchen.coding.net/public/dotf
 - CoLi: Computational Linguistics
 - EC: Evolutionary Computation
 - JAR: Journal of Automated Reasoning
+- BIB: Briefings in Bioinformatics
 
 移除了部分会议期刊的缩写：
 - Algorithmica
@@ -95,6 +98,6 @@ npm run build:drop # 去掉 console 的开发版
 - 知网查是否为中科院核心
 - Engineering Village查是否为EI
 - 常见引用格式转换
-- pdf处理uTools插件中来自应用的情况。
+- pdf处理uTools插件中来自应用的情况
 - Zotero-Search 搜索线上可同步的内容
 - 从引用文献直接向 Zotero 添加内容
